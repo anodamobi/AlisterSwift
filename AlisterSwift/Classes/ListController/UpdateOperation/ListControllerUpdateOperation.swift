@@ -89,6 +89,7 @@ class ListControllerUpdateOperation: Operation, StorageListUpdateOperationInterf
             isExecuting = false
             guard let name = name else {
                 assert(false, "storageID should not be empty")
+                return
             }
             delegate?.storageNeedsReload(name, isAnimated: false)
         }

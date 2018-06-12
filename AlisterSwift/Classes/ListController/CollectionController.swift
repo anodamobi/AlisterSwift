@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class CollectionController: ListController {
+open class CollectionController: ListController {
 
     private var collectionView: UICollectionView
 
-    init(collectionView: UICollectionView) {
+    public init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init(ListCollectionView.init(collectionView: collectionView))
     }
@@ -21,11 +21,11 @@ class CollectionController: ListController {
 
 extension CollectionController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return activeStorage().sections().count
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let section = activeStorage().section(at: section) {
             return section.numberOfObjects
         } else {
@@ -33,29 +33,33 @@ extension CollectionController: UICollectionViewDataSource {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView,
+    open func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let model = activeStorage().object(at: indexPath) else {
             assert(false, "no cell")
+            return UICollectionViewCell()
         }
         
         guard let cell = itemsHandler.cellFor(model, at: indexPath) as? UICollectionViewCell else {
             assert(false, "no cell")
+            return UICollectionViewCell()
         }
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView,
+    open func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         
         guard let model = activeStorage().supplementaryModel(kind: kind, section: indexPath.section) else {
             assert(false, "no model")
+            return UICollectionReusableView()
         }
         
         guard let view = itemsHandler.supplementary(model, at: indexPath, kind: kind) as? UICollectionReusableView else {
             assert(false, "no model")
+            return UICollectionReusableView()
         }
         
         return view
@@ -65,13 +69,13 @@ extension CollectionController: UICollectionViewDataSource {
 
 extension CollectionController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView,
+    open func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         return size(layout: collectionViewLayout, section: section, isHeader: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView,
+    open func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
         return size(layout: collectionViewLayout, section: section, isHeader: false)
@@ -94,7 +98,7 @@ extension CollectionController: UICollectionViewDelegateFlowLayout {
 
 extension CollectionController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         activeStorage().object(at: indexPath)?.selection?()
     }

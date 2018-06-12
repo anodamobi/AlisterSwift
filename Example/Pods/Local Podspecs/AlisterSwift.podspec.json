@@ -1,22 +1,23 @@
 {
   "name": "AlisterSwift",
   "version": "0.1.0",
-  "summary": "A short description of AlisterSwift.",
+  "summary": "Table Helper",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Alexander Kravchenko/AlisterSwift",
+  "homepage": "https://github.com/anodamobi/AlisterSwift",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Alexander Kravchenko": "alex.kravchenko@anoda.mobi"
+    "Oksana Kovalchuk": "oksana@anoda.mobi"
   },
   "source": {
-    "git": "https://github.com/Alexander Kravchenko/AlisterSwift.git",
+    "git": "https://github.com/anodamobi/AlisterSwift.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "AlisterSwift/Classes/**/*"
+  "source_files": "AlisterSwift/Classes/**/*",
+  "swift_version": "4.1"
 }

@@ -40,6 +40,7 @@ class ListCollectionView: ListViewInterface {
     func supplementaryView(identifier: String, kind: String, at: IndexPath?) -> ReusableViewInterface? {
         guard let indexPath = at else {
             assert(false, "indexPath is nil")
+            return nil
         }
         
         return collectionView?.dequeueReusableSupplementaryView(ofKind: kind,

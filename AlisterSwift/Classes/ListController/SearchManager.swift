@@ -16,7 +16,7 @@ protocol SearchManagerDelegate: class {
     func mainStorage() -> Storage
 }
 
-class SearchManager: NSObject {
+public class SearchManager: NSObject {
     
     static let searchScopeNone = -1
     
@@ -108,27 +108,27 @@ class SearchManager: NSObject {
 }
 
 extension SearchManager: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filterItems(searchText, scope: searchBar.selectedScopeButtonIndex, shoudReload: false)
     }
     
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterItems(searchBar.text, scope: selectedScope, shoudReload: false)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         filterItems(nil, scope: SearchManager.searchScopeNone, shoudReload: false)
         searchBar.text?.removeAll()
         searchBar.setShowsCancelButton(false, animated: true)
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
 }

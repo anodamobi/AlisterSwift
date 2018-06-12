@@ -69,7 +69,7 @@ protocol SectionModelInterface {
 }
 
 
-class SectionModel: SectionModelInterface {
+public class SectionModel: SectionModelInterface {
     
     var objects: [ViewModelInterface] {
         get {

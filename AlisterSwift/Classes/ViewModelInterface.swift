@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-typealias SearchEval = ((String, Int) -> Bool)
-typealias Selection = () -> ()
+public typealias SearchEval = ((String, Int) -> Bool)
+public typealias Selection = () -> ()
 
-protocol ViewModelInterface {
+public protocol ViewModelInterface {
     
     var itemSize: CGSize? { get }
     
@@ -20,7 +20,7 @@ protocol ViewModelInterface {
     var selection: Selection? { get }
 }
 
-extension ViewModelInterface {
+public extension ViewModelInterface {
     
     var itemSize: CGSize? {
         return nil

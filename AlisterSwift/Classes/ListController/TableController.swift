@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-class TableController: ListController {
+open class TableController: ListController {
     
     private var tableView: UITableView
     
-    var shouldDisplayHeaderOnEmptySection = true
-    var shouldDisplayFooterOnEmptySection = true
+    public var shouldDisplayHeaderOnEmptySection = true
+    public var shouldDisplayFooterOnEmptySection = true
     
-    init(tableView: UITableView) {
+    public init(tableView: UITableView) {
         self.tableView = tableView
         super.init(ListTableView(tableView: tableView))
     }
@@ -81,23 +81,23 @@ class TableController: ListController {
 
 extension TableController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return viewForSupplementary(index: section, kind: activeStorage().headerKind())
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return viewForSupplementary(index: section, kind: activeStorage().footerKind())
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return heightForSupplementary(index: section, kind: activeStorage().footerKind())
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heightForSupplementary(index: section, kind: activeStorage().headerKind())
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return storage.object(at: indexPath)?.itemSize?.height ?? 0
     }
 }
@@ -105,11 +105,11 @@ extension TableController: UITableViewDelegate {
 //MARK: - Data Source
 extension TableController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return activeStorage().sections().count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let model = activeStorage().section(at: section) {
             return model.numberOfObjects
         } else {
@@ -117,24 +117,26 @@ extension TableController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let model = activeStorage().object(at: indexPath) else {
-             assert(false, "you should register cell")
+            assert(false, "you should register cell")
+            return UITableViewCell()
         }
         
         guard let cell = itemsHandler.cellFor(model, at: indexPath) as? UITableViewCell else {
             assert(false, "you should register cell")
+            return UITableViewCell()
         }
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         activeStorage().object(at: indexPath)?.selection?()
     }
     
-    func tableView(_ tableView: UITableView,
+    open func tableView(_ tableView: UITableView,
                    moveRowAt sourceIndexPath: IndexPath,
                    to destinationIndexPath: IndexPath) {
         activeStorage().update { (config) in

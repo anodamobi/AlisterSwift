@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		18CAAA086785F2C584BDE5C3 /* Pods_AlisterSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88BDF372E35D2410ECCC29D /* Pods_AlisterSwift_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		BC8DFD74654D388CE3B86173 /* Pods_AlisterSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9B709AFE6E0E81A30D6A2C /* Pods_AlisterSwift_Example.framework */; };
+		D42BE89D20CFF47F00A0B0B9 /* TestDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE88C20CFF47F00A0B0B9 /* TestDataGenerator.swift */; };
+		D42BE89E20CFF47F00A0B0B9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE88F20CFF47F00A0B0B9 /* Car.swift */; };
+		D42BE89F20CFF47F00A0B0B9 /* CarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89220CFF47F00A0B0B9 /* CarCollectionCell.swift */; };
+		D42BE8A020CFF47F00A0B0B9 /* CarsCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89320CFF47F00A0B0B9 /* CarsCollectionController.swift */; };
+		D42BE8A120CFF47F00A0B0B9 /* CarsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89420CFF47F00A0B0B9 /* CarsCollectionVC.swift */; };
+		D42BE8A220CFF47F00A0B0B9 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89620CFF47F00A0B0B9 /* CarCell.swift */; };
+		D42BE8A320CFF47F00A0B0B9 /* CarsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89720CFF47F00A0B0B9 /* CarsListController.swift */; };
+		D42BE8A420CFF47F00A0B0B9 /* CarsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89820CFF47F00A0B0B9 /* CarsListVC.swift */; };
+		D42BE8A520CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89920CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift */; };
+		D42BE8A620CFF47F00A0B0B9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89B20CFF47F00A0B0B9 /* MainVC.swift */; };
+		D42BE8A720CFF47F00A0B0B9 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89C20CFF47F00A0B0B9 /* TitleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +42,6 @@
 		607FACD01AFB9204008FA782 /* AlisterSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlisterSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* AlisterSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlisterSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +52,17 @@
 		B2A837D8976F594E7C8CFCF4 /* Pods-AlisterSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC12A472FF590ACAFACB842A /* Pods-AlisterSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CFF7DC81BDF9E339040D9011 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D42BE88C20CFF47F00A0B0B9 /* TestDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataGenerator.swift; sourceTree = "<group>"; };
+		D42BE88F20CFF47F00A0B0B9 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		D42BE89220CFF47F00A0B0B9 /* CarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCollectionCell.swift; sourceTree = "<group>"; };
+		D42BE89320CFF47F00A0B0B9 /* CarsCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsCollectionController.swift; sourceTree = "<group>"; };
+		D42BE89420CFF47F00A0B0B9 /* CarsCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsCollectionVC.swift; sourceTree = "<group>"; };
+		D42BE89620CFF47F00A0B0B9 /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		D42BE89720CFF47F00A0B0B9 /* CarsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsListController.swift; sourceTree = "<group>"; };
+		D42BE89820CFF47F00A0B0B9 /* CarsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsListVC.swift; sourceTree = "<group>"; };
+		D42BE89920CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsTableHeaderFooter.swift; sourceTree = "<group>"; };
+		D42BE89B20CFF47F00A0B0B9 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		D42BE89C20CFF47F00A0B0B9 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		EE702A34953809D4A9244664 /* Pods-AlisterSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		EF9B709AFE6E0E81A30D6A2C /* Pods_AlisterSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlisterSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,9 +111,10 @@
 		607FACD21AFB9204008FA782 /* Example for AlisterSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D42BE88B20CFF47F00A0B0B9 /* Helpers */,
+				D42BE88D20CFF47F00A0B0B9 /* Library */,
+				D42BE89020CFF47F00A0B0B9 /* UserStory */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -159,6 +178,70 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D42BE88B20CFF47F00A0B0B9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D42BE88C20CFF47F00A0B0B9 /* TestDataGenerator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D42BE88D20CFF47F00A0B0B9 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D42BE88E20CFF47F00A0B0B9 /* Domain Models */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		D42BE88E20CFF47F00A0B0B9 /* Domain Models */ = {
+			isa = PBXGroup;
+			children = (
+				D42BE88F20CFF47F00A0B0B9 /* Car.swift */,
+			);
+			path = "Domain Models";
+			sourceTree = "<group>";
+		};
+		D42BE89020CFF47F00A0B0B9 /* UserStory */ = {
+			isa = PBXGroup;
+			children = (
+				D42BE89120CFF47F00A0B0B9 /* Cars Collection */,
+				D42BE89520CFF47F00A0B0B9 /* Cars List */,
+				D42BE89A20CFF47F00A0B0B9 /* Main */,
+			);
+			path = UserStory;
+			sourceTree = "<group>";
+		};
+		D42BE89120CFF47F00A0B0B9 /* Cars Collection */ = {
+			isa = PBXGroup;
+			children = (
+				D42BE89220CFF47F00A0B0B9 /* CarCollectionCell.swift */,
+				D42BE89320CFF47F00A0B0B9 /* CarsCollectionController.swift */,
+				D42BE89420CFF47F00A0B0B9 /* CarsCollectionVC.swift */,
+			);
+			path = "Cars Collection";
+			sourceTree = "<group>";
+		};
+		D42BE89520CFF47F00A0B0B9 /* Cars List */ = {
+			isa = PBXGroup;
+			children = (
+				D42BE89620CFF47F00A0B0B9 /* CarCell.swift */,
+				D42BE89720CFF47F00A0B0B9 /* CarsListController.swift */,
+				D42BE89820CFF47F00A0B0B9 /* CarsListVC.swift */,
+				D42BE89920CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift */,
+			);
+			path = "Cars List";
+			sourceTree = "<group>";
+		};
+		D42BE89A20CFF47F00A0B0B9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D42BE89B20CFF47F00A0B0B9 /* MainVC.swift */,
+				D42BE89C20CFF47F00A0B0B9 /* TitleCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,6 +253,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				8DD483DBF8F4AC47ED287324 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,7 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -301,6 +384,26 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8DD483DBF8F4AC47ED287324 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AlisterSwift/AlisterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlisterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F08B64CA82B0E9B7076F83CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,8 +429,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				D42BE8A720CFF47F00A0B0B9 /* TitleCell.swift in Sources */,
+				D42BE8A020CFF47F00A0B0B9 /* CarsCollectionController.swift in Sources */,
+				D42BE89F20CFF47F00A0B0B9 /* CarCollectionCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				D42BE8A120CFF47F00A0B0B9 /* CarsCollectionVC.swift in Sources */,
+				D42BE8A620CFF47F00A0B0B9 /* MainVC.swift in Sources */,
+				D42BE8A320CFF47F00A0B0B9 /* CarsListController.swift in Sources */,
+				D42BE8A520CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift in Sources */,
+				D42BE8A420CFF47F00A0B0B9 /* CarsListVC.swift in Sources */,
+				D42BE89D20CFF47F00A0B0B9 /* TestDataGenerator.swift in Sources */,
+				D42BE8A220CFF47F00A0B0B9 /* CarCell.swift in Sources */,
+				D42BE89E20CFF47F00A0B0B9 /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,14 +463,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -414,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

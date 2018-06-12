@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol ReusableViewInterface {
+public protocol ReusableViewInterface {
     func update(_ model: ViewModelInterface)
 }
 
@@ -17,9 +17,9 @@ protocol ListControllerUpdateServiceDelegate: class {
     func allUpdatesFinished()
 }
 
-class ListController: NSObject {
+open class ListController: NSObject {
     
-    var storage: Storage {
+    public var storage: Storage {
         didSet {
             attachStorage(storage)
         }
@@ -30,7 +30,7 @@ class ListController: NSObject {
     
     var updatesFinishedTrigger: (()->())?
     
-    lazy var searchManager: SearchManager = {
+    public lazy var searchManager: SearchManager = {
         let manager = SearchManager()
         manager.delegate = self
         return manager
@@ -58,20 +58,20 @@ class ListController: NSObject {
         storage.updatesHandler = nil
     }
     
-    func activeStorage() -> Storage {
+    public func activeStorage() -> Storage {
         return searchManager.isSearching ? searchManager.storage! : storage //TODO: force temp
     }
     
-    func attachSearchBar(_ searchBar: UISearchBar) {
+    public func attachSearchBar(_ searchBar: UISearchBar) {
         searchManager.searchBar = searchBar
     }
 
     
-    func configureCells(_ block: (ListControllerReusableInterface) -> ()) {
+    public func configureCells(_ block: (ListControllerReusableInterface) -> ()) {
         block(itemsHandler)
     }
     
-    func addUpdatesFinishedTriggerBlock(_ block: @escaping ()->()) {
+    public func addUpdatesFinishedTriggerBlock(_ block: @escaping ()->()) {
         updatesFinishedTrigger = block
     }
     

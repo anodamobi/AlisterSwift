@@ -93,6 +93,7 @@ class ListControllerMappingService: ListControllerMappingServiceInterface {
 
         guard let viewModelClass = viewModelClass else {
             assert(false, "view model class is nil")
+            return nil
         }
         
         var type: EntityType = .cell

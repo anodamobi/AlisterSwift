@@ -10,7 +10,7 @@ import UIKit
 
 typealias StorageUpdateClosure = (StorageUpdatableInterface)->()
 
-protocol StorageUpdatableInterface {
+public protocol StorageUpdatableInterface {
     
     func add(_ item: ViewModelInterface)
     func add(_ item: ViewModelInterface, to: Int)
@@ -50,7 +50,7 @@ protocol StorageUpdatableInterface {
     func moveWithoutUpdate(from: IndexPath, to: IndexPath)
 }
 
-class Storage: StoragePublicInterface, StorageUpdatableInterface {
+public class Storage: StoragePublicInterface, StorageUpdatableInterface {
 
     enum StorageType {
         case regular
@@ -74,11 +74,11 @@ class Storage: StoragePublicInterface, StorageUpdatableInterface {
         updater = StorageUpdater(model: storageModel)
     }
 
-    func animatableUpdate(_ block: @escaping (StorageUpdatableInterface) -> ()) {
+    public func animatableUpdate(_ block: @escaping (StorageUpdatableInterface) -> ()) {
        update(shouldAnimate: true, block: block)
     }
     
-    func update(_ block: @escaping (StorageUpdatableInterface) -> ()) {
+    public func update(_ block: @escaping (StorageUpdatableInterface) -> ()) {
         update(shouldAnimate: false, block: block)
     }
     
@@ -99,11 +99,11 @@ class Storage: StoragePublicInterface, StorageUpdatableInterface {
         }
     }
     
-    func reload(shouldAnimate: Bool) {
+    public func reload(shouldAnimate: Bool) {
         updatesHandler?.storageNeedsReload(storageID: storageID, shouldAnimate: shouldAnimate)
     }
     
-    func update(headerKind: String, footerKind: String) {
+    public func update(headerKind: String, footerKind: String) {
         updateHeader(supplementaryKind: headerKind)
         updateFooter(supplementaryKind: footerKind)
     }
@@ -117,82 +117,82 @@ class Storage: StoragePublicInterface, StorageUpdatableInterface {
     
     //MARK: - Add items
     
-    func add(_ item: ViewModelInterface) {
+    public func add(_ item: ViewModelInterface) {
         updater.add([item], to: 0)
     }
     
-    func add(_ items: [ViewModelInterface]) {
+    public func add(_ items: [ViewModelInterface]) {
         updater.add(items, to: 0)
     }
     
-    func add(_ item: ViewModelInterface, to section: Int) {
+    public func add(_ item: ViewModelInterface, to section: Int) {
         updater.add([item], to: section)
     }
     
-    func add(_ items: [ViewModelInterface], to section: Int) {
+    public func add(_ items: [ViewModelInterface], to section: Int) {
         updater.add(items, to: section)
     }
     
-    func add(_ item: ViewModelInterface, at: IndexPath) {
+    public func add(_ item: ViewModelInterface, at: IndexPath) {
         updater.add(item, at: at)
     }
     
     
     //MARK: - Reloading
     
-    func reload<T>(_ item: T) where T : ViewModelInterface & Equatable {
+    public func reload<T>(_ item: T) where T : ViewModelInterface & Equatable {
         updater.reload([item])
     }
 
-    func reload<T>(_ items: [T]) where T : ViewModelInterface & Equatable {
+    public func reload<T>(_ items: [T]) where T : ViewModelInterface & Equatable {
         updater.reload(items)
     }
     
 
     //MARK: - Removing
     
-    func remove(_ indexPath: IndexPath) {
+    public func remove(_ indexPath: IndexPath) {
         remover.remove([indexPath])
     }
     
-    func remove<T>(_ item: T) where T : ViewModelInterface & Equatable {
+    public func remove<T>(_ item: T) where T : ViewModelInterface & Equatable {
         remover.remove(item)
     }
     
-    func remove(_ sections: [Int]) {
+    public func remove(_ sections: [Int]) {
         remover.remove(sections: sections)
     }
     
-    func remove<T>(_ items: [T]) where T : ViewModelInterface & Equatable {
+    public func remove<T>(_ items: [T]) where T : ViewModelInterface & Equatable {
         remover.remove(items)
     }
     
-    func removeAll() {
+    public func removeAll() {
         remover.removeAll()
     }
     
     
     //MARK: - Replacing / Moving
     
-    func replace<T>(_ item: T, on: ViewModelInterface) where T : ViewModelInterface & Equatable {
+    public func replace<T>(_ item: T, on: ViewModelInterface) where T : ViewModelInterface & Equatable {
         updater.replace(item, with: on)
     }
     
-    func moveWithoutUpdate(from: IndexPath, to: IndexPath) {
+    public func moveWithoutUpdate(from: IndexPath, to: IndexPath) {
         updater.moveWithoutUpdate(from: from, to: to)
     }
     
-    func move(from: IndexPath, to: IndexPath) {
+    public func move(from: IndexPath, to: IndexPath) {
         updater.move(from: from, to: to)
     }
     
     //MARK: - Supplementaries
     
-    func updateHeader(supplementaryKind: String) {
+    public func updateHeader(supplementaryKind: String) {
         storageModel.headerKind = supplementaryKind
     }
     
-    func updateFooter(supplementaryKind: String) {
+    public func updateFooter(supplementaryKind: String) {
         storageModel.footerKind = supplementaryKind
     }
     
@@ -204,66 +204,66 @@ class Storage: StoragePublicInterface, StorageUpdatableInterface {
         return storageModel.footerKind
     }
     
-    func update(headerModel: ViewModelInterface, section: Int) {
+    public func update(headerModel: ViewModelInterface, section: Int) {
         updater.update(headerModel: headerModel, section: section)
     }
     
-    func update(footerModel: ViewModelInterface, section: Int) {
+    public func update(footerModel: ViewModelInterface, section: Int) {
         updater.update(footerModel: footerModel, section: section)
     }
     
-    func removeHeader(section: Int) {
+    public func removeHeader(section: Int) {
         remover.removeHeader(section: section)
     }
     
-    func removeFooter(section: Int) {
+    public func removeFooter(section: Int) {
         remover.removeFooter(section: section)
     }
     
-    func debugDescription() -> String {
+    public func debugDescription() -> String {
         return "ID: \(storageID)\n" + storageModel.debugDescription()
     }
 }
 
 extension Storage: StorageRetrivingInterface {
     
-    func sections() -> [SectionModel] {
+    public func sections() -> [SectionModel] {
         return storageModel.sections
     }
     
-    func object(at: IndexPath) -> ViewModelInterface? {
+    public func object(at: IndexPath) -> ViewModelInterface? {
         return StorageLoader.item(at: at, storage: storageModel)
     }
     
-    func allObjects() -> [ViewModelInterface] {
+    public func allObjects() -> [ViewModelInterface] {
         return StorageLoader.allObjects(storage: storageModel)
     }
     
-    func section(at: Int) -> SectionModel? {
+    public func section(at: Int) -> SectionModel? {
         return StorageLoader.section(at: at, storage: storageModel)
     }
     
-    func itemsIn(section: Int) -> [ViewModelInterface] {
+    public func itemsIn(section: Int) -> [ViewModelInterface] {
         return StorageLoader.items(in: section, storage: storageModel)
     }
     
-    func indexPath<T>(for model: T) -> IndexPath? where T : ViewModelInterface & Equatable {
+    public func indexPath<T>(for model: T) -> IndexPath? where T : ViewModelInterface & Equatable {
         return StorageLoader.indexPath(for: model, storage: storageModel)
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return storageModel.isEmpty()
     }
     
-    func headerModel(section: Int) -> ViewModelInterface? {
+    public func headerModel(section: Int) -> ViewModelInterface? {
         return StorageLoader.supplementary(kind: storageModel.headerKind, section: section, storage: storageModel)
     }
     
-    func footerModel(section: Int) -> ViewModelInterface? {
+    public func footerModel(section: Int) -> ViewModelInterface? {
         return StorageLoader.supplementary(kind: storageModel.footerKind, section: section, storage: storageModel)
     }
     
-    func supplementaryModel(kind: String, section: Int) -> ViewModelInterface? {
+    public func supplementaryModel(kind: String, section: Int) -> ViewModelInterface? {
         return StorageLoader.supplementary(kind: kind, section: section, storage: storageModel)
     }
 }
