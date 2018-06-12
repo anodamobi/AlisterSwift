@@ -11,8 +11,8 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		BC8DFD74654D388CE3B86173 /* Pods_AlisterSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9B709AFE6E0E81A30D6A2C /* Pods_AlisterSwift_Example.framework */; };
+		D41F120020D0074500DFC572 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11EE20D0074500DFC572 /* Helpers.swift */; };
 		D42BE89D20CFF47F00A0B0B9 /* TestDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE88C20CFF47F00A0B0B9 /* TestDataGenerator.swift */; };
 		D42BE89E20CFF47F00A0B0B9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE88F20CFF47F00A0B0B9 /* Car.swift */; };
 		D42BE89F20CFF47F00A0B0B9 /* CarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89220CFF47F00A0B0B9 /* CarCollectionCell.swift */; };
@@ -46,12 +46,23 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* AlisterSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlisterSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		954317519E3B06AFE93985FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A88BDF372E35D2410ECCC29D /* Pods_AlisterSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlisterSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A837D8976F594E7C8CFCF4 /* Pods-AlisterSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC12A472FF590ACAFACB842A /* Pods-AlisterSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CFF7DC81BDF9E339040D9011 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D41F11ED20D0074500DFC572 /* ListCollectionViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewTests.swift; sourceTree = "<group>"; };
+		D41F11EE20D0074500DFC572 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D41F11F120D0074500DFC572 /* SearchManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchManagerTests.swift; sourceTree = "<group>"; };
+		D41F11F320D0074500DFC572 /* ListControllerUpdateOperationDelegateFixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerUpdateOperationDelegateFixture.swift; sourceTree = "<group>"; };
+		D41F11F420D0074500DFC572 /* ListControllerUpdateOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerUpdateOperationTests.swift; sourceTree = "<group>"; };
+		D41F11F620D0074500DFC572 /* ListControllerReloadOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerReloadOperationTests.swift; sourceTree = "<group>"; };
+		D41F11F820D0074500DFC572 /* StorageLoaderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageLoaderSpec.swift; sourceTree = "<group>"; };
+		D41F11F920D0074500DFC572 /* StorageRemoverSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageRemoverSpec.swift; sourceTree = "<group>"; };
+		D41F11FA20D0074500DFC572 /* StorageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageSpec.swift; sourceTree = "<group>"; };
+		D41F11FB20D0074500DFC572 /* StorageUpdaterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageUpdaterSpec.swift; sourceTree = "<group>"; };
+		D41F11FC20D0074500DFC572 /* ListTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewTests.swift; sourceTree = "<group>"; };
+		D41F11FE20D0074500DFC572 /* ListControllerMappingServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerMappingServiceTests.swift; sourceTree = "<group>"; };
 		D42BE88C20CFF47F00A0B0B9 /* TestDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataGenerator.swift; sourceTree = "<group>"; };
 		D42BE88F20CFF47F00A0B0B9 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		D42BE89220CFF47F00A0B0B9 /* CarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCollectionCell.swift; sourceTree = "<group>"; };
@@ -134,7 +145,14 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				D41F11EE20D0074500DFC572 /* Helpers.swift */,
+				D41F11ED20D0074500DFC572 /* ListCollectionViewTests.swift */,
+				D41F11FC20D0074500DFC572 /* ListTableViewTests.swift */,
+				D41F11FD20D0074500DFC572 /* Mapping Service */,
+				D41F11F520D0074500DFC572 /* Reload Operation */,
+				D41F11F020D0074500DFC572 /* Search Manager */,
+				D41F11F720D0074500DFC572 /* Storage */,
+				D41F11F220D0074500DFC572 /* Update Operation */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -176,6 +194,50 @@
 				BC12A472FF590ACAFACB842A /* Pods-AlisterSwift_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D41F11F020D0074500DFC572 /* Search Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D41F11F120D0074500DFC572 /* SearchManagerTests.swift */,
+			);
+			path = "Search Manager";
+			sourceTree = "<group>";
+		};
+		D41F11F220D0074500DFC572 /* Update Operation */ = {
+			isa = PBXGroup;
+			children = (
+				D41F11F320D0074500DFC572 /* ListControllerUpdateOperationDelegateFixture.swift */,
+				D41F11F420D0074500DFC572 /* ListControllerUpdateOperationTests.swift */,
+			);
+			path = "Update Operation";
+			sourceTree = "<group>";
+		};
+		D41F11F520D0074500DFC572 /* Reload Operation */ = {
+			isa = PBXGroup;
+			children = (
+				D41F11F620D0074500DFC572 /* ListControllerReloadOperationTests.swift */,
+			);
+			path = "Reload Operation";
+			sourceTree = "<group>";
+		};
+		D41F11F720D0074500DFC572 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D41F11F820D0074500DFC572 /* StorageLoaderSpec.swift */,
+				D41F11F920D0074500DFC572 /* StorageRemoverSpec.swift */,
+				D41F11FA20D0074500DFC572 /* StorageSpec.swift */,
+				D41F11FB20D0074500DFC572 /* StorageUpdaterSpec.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D41F11FD20D0074500DFC572 /* Mapping Service */ = {
+			isa = PBXGroup;
+			children = (
+				D41F11FE20D0074500DFC572 /* ListControllerMappingServiceTests.swift */,
+			);
+			path = "Mapping Service";
 			sourceTree = "<group>";
 		};
 		D42BE88B20CFF47F00A0B0B9 /* Helpers */ = {
@@ -429,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41F120020D0074500DFC572 /* Helpers.swift in Sources */,
 				D42BE8A720CFF47F00A0B0B9 /* TitleCell.swift in Sources */,
 				D42BE8A020CFF47F00A0B0B9 /* CarsCollectionController.swift in Sources */,
 				D42BE89F20CFF47F00A0B0B9 /* CarCollectionCell.swift in Sources */,
@@ -448,7 +511,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
