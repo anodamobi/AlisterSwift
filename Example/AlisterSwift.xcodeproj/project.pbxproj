@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		08A1D56231698833B65D0B70 /* Pods-AlisterSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
-		3BD3EA2B7F22FF37A6EB1E89 /* AlisterSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AlisterSwift.podspec; path = ../AlisterSwift.podspec; sourceTree = "<group>"; };
+		3BD3EA2B7F22FF37A6EB1E89 /* AlisterSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AlisterSwift.podspec; path = ../AlisterSwift.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AlisterSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlisterSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,11 +40,11 @@
 		607FACE51AFB9204008FA782 /* AlisterSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlisterSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		954317519E3B06AFE93985FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		954317519E3B06AFE93985FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A88BDF372E35D2410ECCC29D /* Pods_AlisterSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlisterSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A837D8976F594E7C8CFCF4 /* Pods-AlisterSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC12A472FF590ACAFACB842A /* Pods-AlisterSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		CFF7DC81BDF9E339040D9011 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CFF7DC81BDF9E339040D9011 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EE702A34953809D4A9244664 /* Pods-AlisterSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		EF9B709AFE6E0E81A30D6A2C /* Pods_AlisterSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlisterSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,7 +170,6 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				2597DA1E0EDD577B5713C7B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7VYW9J77NX;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7VYW9J77NX;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -278,24 +279,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2597DA1E0EDD577B5713C7B6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AlisterSwift/AlisterSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlisterSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		81FD49E4B1446EB902C35F91 /* [CP] Embed Pods Frameworks */ = {
@@ -490,6 +473,7 @@
 			baseConfigurationReference = EE702A34953809D4A9244664 /* Pods-AlisterSwift_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AlisterSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -505,6 +489,7 @@
 			baseConfigurationReference = 08A1D56231698833B65D0B70 /* Pods-AlisterSwift_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AlisterSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -519,6 +504,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B2A837D8976F594E7C8CFCF4 /* Pods-AlisterSwift_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -540,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC12A472FF590ACAFACB842A /* Pods-AlisterSwift_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

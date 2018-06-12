@@ -1,0 +1,22 @@
+{
+  "name": "AlisterSwift",
+  "version": "0.1.0",
+  "summary": "A short description of AlisterSwift.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Alexander Kravchenko/AlisterSwift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Alexander Kravchenko": "alex.kravchenko@anoda.mobi"
+  },
+  "source": {
+    "git": "https://github.com/Alexander Kravchenko/AlisterSwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AlisterSwift/Classes/**/*"
+}
