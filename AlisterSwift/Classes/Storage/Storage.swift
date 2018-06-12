@@ -24,6 +24,7 @@ public protocol StorageUpdatableInterface {
 
     func remove<T: ViewModelInterface & Equatable>(_ item: T)
     func remove(_ at: IndexPath)
+    func remove(_ at: [IndexPath])
     func remove<T: ViewModelInterface & Equatable>(_ items: [T])
     func removeAll()
     
@@ -153,6 +154,10 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
     
     public func remove(_ indexPath: IndexPath) {
         remover.remove([indexPath])
+    }
+    
+    public func remove(_ indexPaths: [IndexPath]) {
+        remover.remove(indexPaths)
     }
     
     public func remove<T>(_ item: T) where T : ViewModelInterface & Equatable {
