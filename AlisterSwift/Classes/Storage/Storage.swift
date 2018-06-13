@@ -70,7 +70,7 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
      */
     let storageModel = StorageModel()
 
-    init() {
+    public init() {
         remover = StorageRemover(storageModel: storageModel)
         updater = StorageUpdater(model: storageModel)
     }
