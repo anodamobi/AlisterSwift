@@ -98,7 +98,7 @@ extension TableController: UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return storage.object(at: indexPath)?.itemSize?.height ?? 0
+        return storage.object(at: indexPath)?.itemSize?.height ?? tableView.rowHeight
     }
 }
 
