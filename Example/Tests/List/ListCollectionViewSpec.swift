@@ -11,7 +11,7 @@ import Nimble
 import UIKit
 @testable import AlisterSwift
 
-class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+class ListCollectionViewDataSourceFixture: NSObject, UICollectionViewDataSource {
     
     var datasource: [Int] = [1,2,3,4,5,6,7]
     
@@ -24,22 +24,22 @@ class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     }
 }
 
-class ListCollectionViewTests: QuickSpec {
+class ListCollectionViewSpec: QuickSpec {
     
     override func spec() {
         
         describe("ListCollectionView") {
             
-            var dataSource: ListCollectionViewDataSource!
+            var dataSource: ListCollectionViewDataSourceFixture!
             var collectionView: UICollectionView!
             var listCollectionView: ListCollectionView!
             
             beforeEach {
-                dataSource = ListCollectionViewDataSource()
+                dataSource = ListCollectionViewDataSourceFixture()
                 collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
                 listCollectionView = ListCollectionView(collectionView: collectionView)
                 listCollectionView.registerCellClass(UICollectionViewCell.self, forReuseIdentifier: "ANODA")
-                listCollectionView.setDataSource(dataSource)
+                listCollectionView.dataSource = dataSource
             }
             
             context("table data is consistent", {
@@ -51,10 +51,6 @@ class ListCollectionViewTests: QuickSpec {
                     expect(listCollectionView.scrollView).to(beAKindOf(UIScrollView.self))
                 }
                 
-                it("default cell is kind of `UITableViewCell`") {
-                    expect(listCollectionView.defaultCell).to(beAKindOf(UICollectionViewCell.self))
-                }
-                
                 it("dataSource not nil") {
                     expect(collectionView.dataSource).notTo(beNil())
                 }
@@ -62,8 +58,8 @@ class ListCollectionViewTests: QuickSpec {
             
             context("perfoming update") {
                 
-                var updateModel = StorageUpdateModel()
-                afterEach {
+                var updateModel: StorageUpdateModel!
+                beforeEach {
                     updateModel = StorageUpdateModel()
                 }
                 

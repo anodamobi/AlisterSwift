@@ -24,7 +24,7 @@ class ListViewDataSource: NSObject, UITableViewDataSource {
     }
 }
 
-class ListTableViewTests: QuickSpec {
+class ListTableViewSpec: QuickSpec {
     
     override func spec() {
         
@@ -39,26 +39,15 @@ class ListTableViewTests: QuickSpec {
                 tableView = UITableView()
                 listTableView = ListTableView(tableView: tableView)
                 listTableView.registerCellClass(UITableViewCell.self, forReuseIdentifier: "ANODA")
-                listTableView.setDataSource(dataSource)
+                listTableView.dataSource = dataSource
             }
             
             context("table data is consistent", {
                 it("scroll view exists") {
                     expect(listTableView.scrollView).notTo(beNil())
-                }
-                
-                it("table view can be casted to scroll view") {
                     expect(listTableView.scrollView).to(beAKindOf(UIScrollView.self))
                 }
-                
-                it("default cell is kind of `UITableViewCell`") {
-                    expect(listTableView.defaultCell).to(beAKindOf(UITableViewCell.self))
-                }
-                
-                it("default supplementary view is kind of `UITableViewHeaderFooterView`") {
-                    expect(listTableView.defaultSupplementary).to(beAKindOf(UITableViewHeaderFooterView.self))
-                }
-                
+
                 it("dataSource not nil") {
                     expect(tableView.dataSource).notTo(beNil())
                 }

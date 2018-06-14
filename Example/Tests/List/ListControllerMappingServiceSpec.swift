@@ -23,7 +23,7 @@ class TT: Hashable, ViewModelInterface {
     }
 }
 
-class ListControllerMappingServiceTests: QuickSpec {
+class ListControllerMappingServiceSpec: QuickSpec {
     
     override func spec() {
         

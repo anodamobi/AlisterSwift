@@ -11,7 +11,7 @@ import Quick
 import Nimble
 @testable import AlisterSwift
 
-class StorageTests: QuickSpec {
+class StorageSpec: QuickSpec {
     
     class TestModel: ViewModelInterface & Equatable {
         

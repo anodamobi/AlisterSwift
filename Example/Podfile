@@ -8,7 +8,7 @@ target 'AlisterSwift_Example' do
   target 'AlisterSwift_Tests' do
     inherit! :search_paths
 
-#    pod 'Quick', '~> 1.2.0'
-#    pod 'Nimble', '~> 7.1.2'
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.1.2'
   end
 end

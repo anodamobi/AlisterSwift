@@ -22,7 +22,7 @@ class TestListController: ListController, UITableViewDelegate, UITableViewDataSo
     }
 }
 
-class SearchManagerTests: QuickSpec {
+class SearchManagerSpec: QuickSpec {
     
     class TestModel: ViewModelInterface & Equatable {
         

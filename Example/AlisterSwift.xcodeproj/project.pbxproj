@@ -12,7 +12,18 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		BC8DFD74654D388CE3B86173 /* Pods_AlisterSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9B709AFE6E0E81A30D6A2C /* Pods_AlisterSwift_Example.framework */; };
-		D41F120020D0074500DFC572 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11EE20D0074500DFC572 /* Helpers.swift */; };
+		C74BA00720D27F7D0003AF3D /* ListCollectionViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11ED20D0074500DFC572 /* ListCollectionViewSpec.swift */; };
+		C74BA00820D27F7D0003AF3D /* ListTableViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11FC20D0074500DFC572 /* ListTableViewSpec.swift */; };
+		C74BA00920D27F7D0003AF3D /* ListControllerMappingServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11FE20D0074500DFC572 /* ListControllerMappingServiceSpec.swift */; };
+		C74BA00A20D27F7D0003AF3D /* ListControllerReloadOperationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11F620D0074500DFC572 /* ListControllerReloadOperationSpec.swift */; };
+		C74BA00B20D27F7D0003AF3D /* ListControllerUpdateOperationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11F420D0074500DFC572 /* ListControllerUpdateOperationSpec.swift */; };
+		C74BA00C20D27F7D0003AF3D /* SearchManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11F120D0074500DFC572 /* SearchManagerSpec.swift */; };
+		C74BA00D20D27F7D0003AF3D /* StorageLoaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11F820D0074500DFC572 /* StorageLoaderSpec.swift */; };
+		C74BA00E20D27F7D0003AF3D /* StorageRemoverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11F920D0074500DFC572 /* StorageRemoverSpec.swift */; };
+		C74BA00F20D27F7D0003AF3D /* StorageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11FA20D0074500DFC572 /* StorageSpec.swift */; };
+		C74BA01020D27F7D0003AF3D /* StorageUpdaterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11FB20D0074500DFC572 /* StorageUpdaterSpec.swift */; };
+		C74BA01120D280130003AF3D /* ListControllerUpdateOperationDelegateFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11F320D0074500DFC572 /* ListControllerUpdateOperationDelegateFixture.swift */; };
+		C74BA01320D2802D0003AF3D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F11EE20D0074500DFC572 /* Helpers.swift */; };
 		D42BE89D20CFF47F00A0B0B9 /* TestDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE88C20CFF47F00A0B0B9 /* TestDataGenerator.swift */; };
 		D42BE89E20CFF47F00A0B0B9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE88F20CFF47F00A0B0B9 /* Car.swift */; };
 		D42BE89F20CFF47F00A0B0B9 /* CarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89220CFF47F00A0B0B9 /* CarCollectionCell.swift */; };
@@ -51,18 +62,18 @@
 		B2A837D8976F594E7C8CFCF4 /* Pods-AlisterSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC12A472FF590ACAFACB842A /* Pods-AlisterSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlisterSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CFF7DC81BDF9E339040D9011 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		D41F11ED20D0074500DFC572 /* ListCollectionViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewTests.swift; sourceTree = "<group>"; };
+		D41F11ED20D0074500DFC572 /* ListCollectionViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewSpec.swift; sourceTree = "<group>"; };
 		D41F11EE20D0074500DFC572 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		D41F11F120D0074500DFC572 /* SearchManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchManagerTests.swift; sourceTree = "<group>"; };
+		D41F11F120D0074500DFC572 /* SearchManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchManagerSpec.swift; sourceTree = "<group>"; };
 		D41F11F320D0074500DFC572 /* ListControllerUpdateOperationDelegateFixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerUpdateOperationDelegateFixture.swift; sourceTree = "<group>"; };
-		D41F11F420D0074500DFC572 /* ListControllerUpdateOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerUpdateOperationTests.swift; sourceTree = "<group>"; };
-		D41F11F620D0074500DFC572 /* ListControllerReloadOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerReloadOperationTests.swift; sourceTree = "<group>"; };
+		D41F11F420D0074500DFC572 /* ListControllerUpdateOperationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerUpdateOperationSpec.swift; sourceTree = "<group>"; };
+		D41F11F620D0074500DFC572 /* ListControllerReloadOperationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerReloadOperationSpec.swift; sourceTree = "<group>"; };
 		D41F11F820D0074500DFC572 /* StorageLoaderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageLoaderSpec.swift; sourceTree = "<group>"; };
 		D41F11F920D0074500DFC572 /* StorageRemoverSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageRemoverSpec.swift; sourceTree = "<group>"; };
 		D41F11FA20D0074500DFC572 /* StorageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageSpec.swift; sourceTree = "<group>"; };
 		D41F11FB20D0074500DFC572 /* StorageUpdaterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageUpdaterSpec.swift; sourceTree = "<group>"; };
-		D41F11FC20D0074500DFC572 /* ListTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewTests.swift; sourceTree = "<group>"; };
-		D41F11FE20D0074500DFC572 /* ListControllerMappingServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerMappingServiceTests.swift; sourceTree = "<group>"; };
+		D41F11FC20D0074500DFC572 /* ListTableViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewSpec.swift; sourceTree = "<group>"; };
+		D41F11FE20D0074500DFC572 /* ListControllerMappingServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListControllerMappingServiceSpec.swift; sourceTree = "<group>"; };
 		D42BE88C20CFF47F00A0B0B9 /* TestDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataGenerator.swift; sourceTree = "<group>"; };
 		D42BE88F20CFF47F00A0B0B9 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		D42BE89220CFF47F00A0B0B9 /* CarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCollectionCell.swift; sourceTree = "<group>"; };
@@ -146,13 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				D41F11EE20D0074500DFC572 /* Helpers.swift */,
-				D41F11ED20D0074500DFC572 /* ListCollectionViewTests.swift */,
-				D41F11FC20D0074500DFC572 /* ListTableViewTests.swift */,
-				D41F11FD20D0074500DFC572 /* Mapping Service */,
-				D41F11F520D0074500DFC572 /* Reload Operation */,
-				D41F11F020D0074500DFC572 /* Search Manager */,
+				D41F11FD20D0074500DFC572 /* List */,
 				D41F11F720D0074500DFC572 /* Storage */,
-				D41F11F220D0074500DFC572 /* Update Operation */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -196,34 +202,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D41F11F020D0074500DFC572 /* Search Manager */ = {
-			isa = PBXGroup;
-			children = (
-				D41F11F120D0074500DFC572 /* SearchManagerTests.swift */,
-			);
-			path = "Search Manager";
-			sourceTree = "<group>";
-		};
-		D41F11F220D0074500DFC572 /* Update Operation */ = {
-			isa = PBXGroup;
-			children = (
-				D41F11F320D0074500DFC572 /* ListControllerUpdateOperationDelegateFixture.swift */,
-				D41F11F420D0074500DFC572 /* ListControllerUpdateOperationTests.swift */,
-			);
-			path = "Update Operation";
-			sourceTree = "<group>";
-		};
-		D41F11F520D0074500DFC572 /* Reload Operation */ = {
-			isa = PBXGroup;
-			children = (
-				D41F11F620D0074500DFC572 /* ListControllerReloadOperationTests.swift */,
-			);
-			path = "Reload Operation";
-			sourceTree = "<group>";
-		};
 		D41F11F720D0074500DFC572 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				D41F11F120D0074500DFC572 /* SearchManagerSpec.swift */,
 				D41F11F820D0074500DFC572 /* StorageLoaderSpec.swift */,
 				D41F11F920D0074500DFC572 /* StorageRemoverSpec.swift */,
 				D41F11FA20D0074500DFC572 /* StorageSpec.swift */,
@@ -232,12 +214,17 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		D41F11FD20D0074500DFC572 /* Mapping Service */ = {
+		D41F11FD20D0074500DFC572 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D41F11FE20D0074500DFC572 /* ListControllerMappingServiceTests.swift */,
+				D41F11ED20D0074500DFC572 /* ListCollectionViewSpec.swift */,
+				D41F11FC20D0074500DFC572 /* ListTableViewSpec.swift */,
+				D41F11FE20D0074500DFC572 /* ListControllerMappingServiceSpec.swift */,
+				D41F11F620D0074500DFC572 /* ListControllerReloadOperationSpec.swift */,
+				D41F11F320D0074500DFC572 /* ListControllerUpdateOperationDelegateFixture.swift */,
+				D41F11F420D0074500DFC572 /* ListControllerUpdateOperationSpec.swift */,
 			);
-			path = "Mapping Service";
+			path = List;
 			sourceTree = "<group>";
 		};
 		D42BE88B20CFF47F00A0B0B9 /* Helpers */ = {
@@ -334,6 +321,7 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
+				560DE6386DDB636E1CA3FD43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -352,7 +340,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -425,6 +413,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		560DE6386DDB636E1CA3FD43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Tests/Pods-AlisterSwift_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8DD483DBF8F4AC47ED287324 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -470,7 +478,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D41F120020D0074500DFC572 /* Helpers.swift in Sources */,
 				D42BE8A720CFF47F00A0B0B9 /* TitleCell.swift in Sources */,
 				D42BE8A020CFF47F00A0B0B9 /* CarsCollectionController.swift in Sources */,
 				D42BE89F20CFF47F00A0B0B9 /* CarCollectionCell.swift in Sources */,
@@ -490,6 +497,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74BA00F20D27F7D0003AF3D /* StorageSpec.swift in Sources */,
+				C74BA00D20D27F7D0003AF3D /* StorageLoaderSpec.swift in Sources */,
+				C74BA01020D27F7D0003AF3D /* StorageUpdaterSpec.swift in Sources */,
+				C74BA00C20D27F7D0003AF3D /* SearchManagerSpec.swift in Sources */,
+				C74BA00820D27F7D0003AF3D /* ListTableViewSpec.swift in Sources */,
+				C74BA00E20D27F7D0003AF3D /* StorageRemoverSpec.swift in Sources */,
+				C74BA00A20D27F7D0003AF3D /* ListControllerReloadOperationSpec.swift in Sources */,
+				C74BA01320D2802D0003AF3D /* Helpers.swift in Sources */,
+				C74BA00B20D27F7D0003AF3D /* ListControllerUpdateOperationSpec.swift in Sources */,
+				C74BA00920D27F7D0003AF3D /* ListControllerMappingServiceSpec.swift in Sources */,
+				C74BA00720D27F7D0003AF3D /* ListCollectionViewSpec.swift in Sources */,
+				C74BA01120D280130003AF3D /* ListControllerUpdateOperationDelegateFixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,12 +546,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -580,12 +601,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -665,6 +688,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlisterSwift_Example.app/AlisterSwift_Example";
 			};
 			name = Debug;
 		};
@@ -683,6 +707,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlisterSwift_Example.app/AlisterSwift_Example";
 			};
 			name = Release;
 		};
