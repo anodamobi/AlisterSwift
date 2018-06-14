@@ -39,7 +39,7 @@ class StorageLoaderSpec: QuickSpec {
         describe("item at indexPath") {
             
             it("_p if indexPath exist returns value", closure: {
-                let value = StorageLoader.item(at: indexPath, storage: storage) as! TestViewModel
+                let value = StorageLoader.item(at: indexPath, storage: storage) as? TestViewModel
                 expect(value).to(equal(original))
             })
             

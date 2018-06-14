@@ -97,7 +97,6 @@ func zeroIndexPath() -> IndexPath {
 }
 
 
-
 struct TestViewModel: ViewModelInterface, Equatable {
     var item: String
     

@@ -46,10 +46,10 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "AlisterSwift_Example.app"
-            BlueprintName = "AlisterSwift_Example"
-            ReferencedContainer = "container:AlisterSwift.xcodeproj">
+            BlueprintIdentifier = "22DF0FCB246F0BCF443C37AC2075AB15"
+            BuildableName = "AlisterSwift.framework"
+            BlueprintName = "AlisterSwift"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>

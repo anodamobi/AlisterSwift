@@ -3,18 +3,21 @@ PODS:
   - Nimble (7.1.2)
   - Quick (1.2.0)
   - SnapKit (4.0.0)
+  - SwiftLint (0.25.1)
 
 DEPENDENCIES:
   - AlisterSwift (from `../`)
   - Nimble (~> 7.1.2)
   - Quick (~> 1.2.0)
   - SnapKit
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Nimble
     - Quick
     - SnapKit
+    - SwiftLint
 
 EXTERNAL SOURCES:
   AlisterSwift:
@@ -25,7 +28,8 @@ SPEC CHECKSUMS:
   Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: d7a637a117b540266160032d99c5bd0ac337d2e2
+PODFILE CHECKSUM: 78233a41350f08449fd9d881432a4a47d724ca7d
 
 COCOAPODS: 1.5.0

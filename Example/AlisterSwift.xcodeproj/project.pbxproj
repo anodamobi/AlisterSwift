@@ -303,6 +303,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				8DD483DBF8F4AC47ED287324 /* [CP] Embed Pods Frameworks */,
+				C731D41020D28A50009BA3F6 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -452,6 +453,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlisterSwift_Example/Pods-AlisterSwift_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C731D41020D28A50009BA3F6 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"${SRCROOT}/../.swiftlint.yml\"";
 		};
 		F08B64CA82B0E9B7076F83CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

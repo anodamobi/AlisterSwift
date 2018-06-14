@@ -34,7 +34,6 @@ class CarCellViewModel: ViewModelInterface {
     }
 }
 
-
 class CarCell: UITableViewCell, ReusableViewInterface {
     
     private let title = UILabel()
