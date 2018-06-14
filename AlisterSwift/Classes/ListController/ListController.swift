@@ -24,7 +24,7 @@ protocol ListControllerUpdateServiceDelegate: class {
     func allUpdatesFinished()
 }
 
-typealias SelectionClosure = (ViewModelInterface, IndexPath)-> ()
+public typealias SelectionClosure = (ViewModelInterface, IndexPath)-> ()
 
 open class ListController: NSObject {
     
@@ -38,7 +38,7 @@ open class ListController: NSObject {
     var updateService: UpdateService
     
     var updatesFinishedTrigger: (()->())?
-    var selection: SelectionClosure?
+    public var selection: SelectionClosure?
     
     public lazy var searchManager: SearchManager = {
         let manager = SearchManager()
