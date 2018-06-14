@@ -134,10 +134,10 @@ extension TableController: UITableViewDataSource {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let viewModel = activeStorage().object(at: indexPath) {
+        if let closure = activeStorage().object(at: indexPath)?.selection {
+            closure()
+        } else if let viewModel = activeStorage().object(at: indexPath) {
             selection?(viewModel, indexPath)
-        } else {
-            activeStorage().object(at: indexPath)?.selection?()
         }
     }
     
