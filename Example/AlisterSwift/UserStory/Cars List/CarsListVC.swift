@@ -40,7 +40,7 @@ class CarsListVC: UIViewController {
 
     private func configureUI() {
         view.addSubview(tableView)
-        tableView.snp.makeConstraints { (make) in
+        tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -62,7 +62,7 @@ class CarsListVC: UIViewController {
         }
 
         // Registering cells/headers/footers
-        controller.configureCells { (config) in
+        controller.configureCells { config in
             config.register(cell: CarCell.self, for: CarCellViewModel.self)
             config.register(footer: CarsTableHeaderFooter.self, for: CarsTableHeaderFooterVM.self)
             config.register(header: CarsTableHeaderFooter.self, for: CarsTableHeaderFooterVM.self)
@@ -78,7 +78,7 @@ class CarsListVC: UIViewController {
         let modelsSection1 = Array(models[0..<5])
         let modelsSection2 = Array(models[5..<10])
 
-        controller.storage.update { [unowned self] (update) in
+        controller.storage.update { [unowned self] update in
             
             // Adding rows to the table
             update.add(modelsSection1)

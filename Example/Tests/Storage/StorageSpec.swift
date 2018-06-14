@@ -13,33 +13,21 @@ import Nimble
 
 class StorageSpec: QuickSpec {
     
-    class TestModel: ViewModelInterface & Equatable {
-        
-        var name: String
-        
-        init(name: String) {
-            self.name = name
-        }
-        
-        static func ==(lhs: TestModel, rhs: TestModel) -> Bool {
-            return lhs.name == rhs.name
-        }
-    }
-    
+    // swiftlint:disable function_body_length
     override func spec() {
         
         describe("Add models tests") {
             
             var storage: Storage!
-            var model1: TestModel!
-            var model2: TestModel!
-            var model3: TestModel!
+            var model1: TestViewModel!
+            var model2: TestViewModel!
+            var model3: TestViewModel!
             
             beforeEach {
                 storage = Storage()
-                model1 = TestModel(name: "Model 1")
-                model2 = TestModel(name: "Model 2")
-                model3 = TestModel(name: "Model 3")
+                model1 = TestViewModel(item: "Model 1")
+                model2 = TestViewModel(item: "Model 2")
+                model3 = TestViewModel(item: "Model 3")
             }
             
             it("Adding elements to the default section", closure: {
@@ -79,22 +67,22 @@ class StorageSpec: QuickSpec {
         describe("Get models tests") {
             
             var storage: Storage!
-            var model1: TestModel!
-            var model2: TestModel!
-            var model3: TestModel!
+            var model1: TestViewModel!
+            var model2: TestViewModel!
+            var model3: TestViewModel!
             
             beforeEach {
                 storage = Storage()
-                model1 = TestModel(name: "Model 1")
-                model2 = TestModel(name: "Model 2")
-                model3 = TestModel(name: "Model 3")
+                model1 = TestViewModel(item: "Model 1")
+                model2 = TestViewModel(item: "Model 2")
+                model3 = TestViewModel(item: "Model 3")
             }
             
             it("Get item at IndexPath", closure: {
                 storage.add([model1, model2, model3])
-                let item1 = storage.object(at: IndexPath(row: 0, section: 0)) as? TestModel
-                let item1Name = item1?.name ?? "Undefined"
-                expect(item1Name).toEventually(equal(model1.name), timeout: 1.0)
+                let item1 = storage.object(at: IndexPath(row: 0, section: 0)) as? TestViewModel
+                let item1Name = item1?.item ?? "Undefined"
+                expect(item1Name).toEventually(equal(model1.item), timeout: 1.0)
             })
             
             it("Get item's IndexPath", closure: {
@@ -111,10 +99,10 @@ class StorageSpec: QuickSpec {
                 storage.add([model1, model2])
                 storage.replace(model1, on: model3)
 
-                let newItem = storage.object(at: IndexPath(row: 0, section: 0)) as? TestModel
-                let itemName = newItem?.name ?? "Undefined"
+                let newItem = storage.object(at: IndexPath(row: 0, section: 0)) as? TestViewModel
+                let itemName = newItem?.item ?? "Undefined"
                 
-                expect(itemName).toEventually(equal(model3.name), timeout: 1.0)
+                expect(itemName).toEventually(equal(model3.item), timeout: 1.0)
             })
             
             it("Move items", closure: {
@@ -122,25 +110,25 @@ class StorageSpec: QuickSpec {
                 storage.move(from: IndexPath(row: 1, section: 0),
                              to: IndexPath(row: 0, section: 0))
                 
-                let item = storage.object(at: IndexPath(row: 0, section: 0)) as? TestModel
-                let itemName = item?.name ?? "Undefined"
+                let item = storage.object(at: IndexPath(row: 0, section: 0)) as? TestViewModel
+                let itemName = item?.item ?? "Undefined"
                 
-                expect(itemName).toEventually(equal(model2.name), timeout: 1.0)
+                expect(itemName).toEventually(equal(model2.item), timeout: 1.0)
             })
         }
         
         describe("Delete models tests") {
             
             var storage: Storage!
-            var model1: TestModel!
-            var model2: TestModel!
-            var model3: TestModel!
+            var model1: TestViewModel!
+            var model2: TestViewModel!
+            var model3: TestViewModel!
             
             beforeEach {
                 storage = Storage()
-                model1 = TestModel(name: "Model 1")
-                model2 = TestModel(name: "Model 2")
-                model3 = TestModel(name: "Model 3")
+                model1 = TestViewModel(item: "Model 1")
+                model2 = TestViewModel(item: "Model 2")
+                model3 = TestViewModel(item: "Model 3")
             }
             
             it("Remove item", closure: {
@@ -148,11 +136,11 @@ class StorageSpec: QuickSpec {
                 storage.remove(model2)
                 
                 let numberOfElements = storage.itemsIn(section: 0).count
-                let itemAtIndex = storage.object(at: IndexPath(row: 1, section: 0)) as? TestModel
-                let itemName = itemAtIndex?.name ?? "Undefined"
+                let itemAtIndex = storage.object(at: IndexPath(row: 1, section: 0)) as? TestViewModel
+                let itemName = itemAtIndex?.item ?? "Undefined"
                 
                 expect(numberOfElements).toEventually(equal(2), timeout: 1.0)
-                expect(itemName).toEventually(equal(model3.name), timeout: 1.0)
+                expect(itemName).toEventually(equal(model3.item), timeout: 1.0)
             })
             
             it("Remove item at IndexPath", closure: {
@@ -160,11 +148,11 @@ class StorageSpec: QuickSpec {
                 storage.remove(IndexPath(row: 1, section: 0))
                 
                 let numberOfElements = storage.itemsIn(section: 0).count
-                let itemAtIndex = storage.object(at: IndexPath(row: 1, section: 0)) as? TestModel
-                let itemName = itemAtIndex?.name ?? "Undefined"
+                let itemAtIndex = storage.object(at: IndexPath(row: 1, section: 0)) as? TestViewModel
+                let itemName = itemAtIndex?.item ?? "Undefined"
                 
                 expect(numberOfElements).toEventually(equal(2), timeout: 1.0)
-                expect(itemName).toEventually(equal(model3.name), timeout: 1.0)
+                expect(itemName).toEventually(equal(model3.item), timeout: 1.0)
             })
             
             it("Remove section", closure: {
@@ -173,11 +161,11 @@ class StorageSpec: QuickSpec {
                 storage.remove([0])
                 
                 let section1 = storage.section(at: 1)
-                let itemAtIndex = storage.object(at: IndexPath(row: 0, section: 0)) as? TestModel
-                let itemName = itemAtIndex?.name ?? "Undefined"
+                let itemAtIndex = storage.object(at: IndexPath(row: 0, section: 0)) as? TestViewModel
+                let itemName = itemAtIndex?.item ?? "Undefined"
                 
                 expect(section1).toEventually(beNil(), timeout: 1.0)
-                expect(itemName).toEventually(equal(model3.name), timeout: 1.0)
+                expect(itemName).toEventually(equal(model3.item), timeout: 1.0)
             })
         }
     }

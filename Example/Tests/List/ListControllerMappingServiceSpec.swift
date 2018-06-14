@@ -11,14 +11,14 @@ import Nimble
 import Quick
 @testable import AlisterSwift
 
-class TT: Hashable, ViewModelInterface {
+class ViewModelExample: Hashable, ViewModelInterface {
     var id: String = ""
     
     var hashValue: Int {
         return id.hashValue
     }
-    
-    static func ==(lhs: TT, rhs: TT) -> Bool {
+    // swiftlint:disable operator_whitespace
+    static func ==(lhs: ViewModelExample, rhs: ViewModelExample) -> Bool {
         return lhs.id == rhs.id
     }
 }
@@ -30,33 +30,32 @@ class ListControllerMappingServiceSpec: QuickSpec {
         describe("Mapping Service tests") {
             
             let service = ListControllerMappingService()
-            let classIdentifier = String(describing: TT.self)
+            let classIdentifier = String(describing: ViewModelExample.self)
             let fullClassIdentifier = classIdentifier + "<=>" + "kANDefaultCellKind"
             
             it("Register Class", closure: {
-                let result = service.registerViewModelClass(TT.self)
+                let result = service.registerViewModelClass(ViewModelExample.self)
                 expect(result) == fullClassIdentifier
             })
             
             it("Register Class custom kind", closure: {
-                let result = service.registerViewModelClass(TT.self, kind: "Hello_world")
+                let result = service.registerViewModelClass(ViewModelExample.self, kind: "Hello_world")
                 let expectedResult = classIdentifier + "<=>" + "Hello_world"
                 expect(result) == expectedResult
             })
             
             it("Get registered identifier", closure: {
-                _ = service.registerViewModelClass(TT.self)
-                let result = service.identifierForViewModelClass(TT.self)
+                _ = service.registerViewModelClass(ViewModelExample.self)
+                let result = service.identifierForViewModelClass(ViewModelExample.self)
                 expect(result).to(equal(fullClassIdentifier))
             })
             
             it("Get registered identifier custom kind", closure: {
-                _ = service.registerViewModelClass(TT.self, kind: "Hello_world")
-                let result = service.identifierForViewModelClass(TT.self, kind: "Hello_world")
+                _ = service.registerViewModelClass(ViewModelExample.self, kind: "Hello_world")
+                let result = service.identifierForViewModelClass(ViewModelExample.self, kind: "Hello_world")
                 let expectedResult = classIdentifier + "<=>" + "Hello_world"
                 expect(result).to(equal(expectedResult))
             })
         }
     }
 }
-

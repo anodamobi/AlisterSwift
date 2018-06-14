@@ -24,7 +24,7 @@ class TestListController: ListController, UITableViewDelegate, UITableViewDataSo
 
 class SearchManagerSpec: QuickSpec {
     
-    class TestModel: ViewModelInterface & Equatable {
+    class TestViewModel: ViewModelInterface & Equatable {
         
         var name: String
         
@@ -39,7 +39,7 @@ class SearchManagerSpec: QuickSpec {
             self.name = name
         }
         
-        static func == (lhs: TestModel, rhs: TestModel) -> Bool {
+        static func == (lhs: TestViewModel, rhs: TestViewModel) -> Bool {
             return lhs.name == rhs.name
         }
         
@@ -56,9 +56,9 @@ class SearchManagerSpec: QuickSpec {
             var storage: Storage!
             var searchBar: UISearchBar!
             
-            var model1: TestModel!
-            var model2: TestModel!
-            var model3: TestModel!
+            var model1: TestViewModel!
+            var model2: TestViewModel!
+            var model3: TestViewModel!
             
             beforeEach {
                 tableView = UITableView()
@@ -74,16 +74,16 @@ class SearchManagerSpec: QuickSpec {
                 
                 listController.storage = storage
                 
-                model1 = TestModel(name: "Model 1")
-                model2 = TestModel(name: "Model 2")
-                model3 = TestModel(name: "Model 3")
+                model1 = TestViewModel(name: "Model 1")
+                model2 = TestViewModel(name: "Model 2")
+                model3 = TestViewModel(name: "Model 3")
             }
             
             it("Search by some search string", closure: {
                 storage.add([model1, model2, model3])
                 searchManager.performSearch(string: "Model 1", scope: 0)
                 
-                let items = searchManager.storage?.itemsIn(section: 0) as? [TestModel]
+                let items = searchManager.storage?.itemsIn(section: 0) as? [TestViewModel]
                 let numberOfItems = items?.count ?? -1
                 let firstItemName = items?.first?.name ?? "Undefined"
                 
@@ -96,7 +96,7 @@ class SearchManagerSpec: QuickSpec {
                 searchManager.performSearch(string: "Model 1", scope: 0)
                 searchManager.performSearch(string: "Model 2", scope: 1)
                 
-                let items = searchManager.storage?.itemsIn(section: 0) as? [TestModel]
+                let items = searchManager.storage?.itemsIn(section: 0) as? [TestViewModel]
                 let numberOfItems = items?.count ?? -1
                 let firstItemName = items?.first?.name ?? "Undefined"
                 

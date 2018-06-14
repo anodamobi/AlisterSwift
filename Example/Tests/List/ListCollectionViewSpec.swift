@@ -13,7 +13,7 @@ import UIKit
 
 class ListCollectionViewDataSourceFixture: NSObject, UICollectionViewDataSource {
     
-    var datasource: [Int] = [1,2,3,4,5,6,7]
+    var datasource: [Int] = [1, 2, 3, 4, 5, 6, 7]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return datasource.count
@@ -26,6 +26,7 @@ class ListCollectionViewDataSourceFixture: NSObject, UICollectionViewDataSource 
 
 class ListCollectionViewSpec: QuickSpec {
     
+    // swiftlint:disable function_body_length
     override func spec() {
         
         describe("ListCollectionView") {
@@ -113,7 +114,9 @@ class ListCollectionViewSpec: QuickSpec {
                 
                 it("removing all items") {
                     
-                    updateModel.addDeletedIndexPaths(dataSource.datasource.enumerated().map { IndexPath(row: $0.offset, section: 0) })
+                    updateModel.addDeletedIndexPaths(dataSource.datasource.enumerated().map {
+                        IndexPath(row: $0.offset, section: 0)
+                    })
                     dataSource.datasource.removeAll()
                     listCollectionView.performUpdate(updateModel, animated: true)
                     

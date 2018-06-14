@@ -104,5 +104,3 @@ struct TestViewModel: ViewModelInterface, Equatable {
         return lhs.item == rhs.item
     }
 }
-
-

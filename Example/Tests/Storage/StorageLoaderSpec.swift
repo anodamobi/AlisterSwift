@@ -14,6 +14,7 @@ import Nimble
 
 class StorageLoaderSpec: QuickSpec {
    
+    // swiftlint:disable function_body_length
     override func spec() {
         
         var storage: StorageModel!

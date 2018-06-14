@@ -49,7 +49,7 @@ class CarCell: UITableViewCell, ReusableViewInterface {
     
     private func configureUI() {
         contentView.addSubview(title)
-        title.snp.makeConstraints { (make) in
+        title.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }

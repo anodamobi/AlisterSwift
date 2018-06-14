@@ -13,7 +13,7 @@ import UIKit
 
 class ListViewDataSource: NSObject, UITableViewDataSource {
     
-    var datasource: [Int] = [1,2,3,4,5,6,7]
+    var datasource: [Int] = [1, 2, 3, 4, 5, 6, 7]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
@@ -26,6 +26,7 @@ class ListViewDataSource: NSObject, UITableViewDataSource {
 
 class ListTableViewSpec: QuickSpec {
     
+    // swiftlint:disable function_body_length
     override func spec() {
         
         describe("ListTableView") {
@@ -109,7 +110,7 @@ class ListTableViewSpec: QuickSpec {
                 }
                 
                 it("reload data") {
-                    dataSource.datasource = [5,4,3]
+                    dataSource.datasource = [5, 4, 3]
                     listTableView.reloadData()
                     
                     let numberOfRows = tableView.numberOfRows(inSection: 0)
