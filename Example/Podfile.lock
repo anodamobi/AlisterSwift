@@ -1,19 +1,13 @@
 PODS:
   - AlisterSwift (0.1.0)
-  - Nimble (7.1.2)
-  - Quick (1.2.0)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - AlisterSwift (from `../`)
-  - Nimble (~> 7.1.2)
-  - Quick (~> 1.2.0)
   - SnapKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Nimble
-    - Quick
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -22,10 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AlisterSwift: 902d0f129b4d68f241224d854e1411beec59dd05
-  Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: d7a637a117b540266160032d99c5bd0ac337d2e2
+PODFILE CHECKSUM: b3374483697a992b01adcbd150bb8cc6cfd4e655
 
 COCOAPODS: 1.5.0
