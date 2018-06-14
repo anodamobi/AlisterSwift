@@ -98,6 +98,8 @@ protocol StorageUpdaterInterface {
     
     func replace<T: Equatable & ViewModelInterface>(_ item: T, with: ViewModelInterface)
     
+    func replace(_ index: Int, on items: [ViewModelInterface])
+    
     
     /**
      This method specially to pair UITableView's method:
@@ -144,6 +146,9 @@ protocol StorageUpdaterInterface {
      @param items   NSArray* items array for reload
      */
     func reload<T: Equatable>(_ items: [T])
+    
+    func reload(_ index: Int)
+    func reload(_ sections: [Int])
     
     
     /**
@@ -235,6 +240,14 @@ struct StorageUpdater: StorageUpdaterInterface {
         }
     }
     
+    func replace(_ index: Int, on items: [ViewModelInterface]) {
+        var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }
+        if let section = StorageLoader.section(at: index, storage: storageModel) {
+            section.items = items
+            update.addUpdatedSectionIndex(index)
+        }
+    }
+    
     func moveWithoutUpdate(from: IndexPath, to: IndexPath) {
         move(from: from, to: to, handleUpdate: false)
     }
@@ -251,6 +264,20 @@ struct StorageUpdater: StorageUpdaterInterface {
         var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }
         let indexPaths = StorageLoader.indexPaths(for: items, storage: storageModel)
         update.addUpdatedIndexPaths(indexPaths)
+    }
+    
+    func reload(_ index: Int) {
+        reload([index])
+    }
+    
+    func reload(_ sections: [Int]) {
+        var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }
+        
+        for index in sections {
+            if StorageLoader.section(at: index, storage: storageModel) != nil {
+                update.addUpdatedSectionIndex(index)
+            }
+        }
     }
     
     func update(headerModel: ViewModelInterface, section: Int) {

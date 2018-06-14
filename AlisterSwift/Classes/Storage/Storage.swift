@@ -21,13 +21,17 @@ public protocol StorageUpdatableInterface {
 
     func reload<T: ViewModelInterface & Equatable>(_ item: T)
     func reload<T: ViewModelInterface & Equatable>(_ items: [T])
-
+    func reload(_ section: Int)
+    func reload(_ sections: [Int])
+    
     func remove<T: ViewModelInterface & Equatable>(_ item: T)
     func remove(_ at: IndexPath)
     func remove<T: ViewModelInterface & Equatable>(_ items: [T])
     func removeAll()
     
     func replace<T: ViewModelInterface & Equatable>(_ item: T, on: ViewModelInterface)
+    func replace(_ section: Int, on: [ViewModelInterface])
+    
     func move(from: IndexPath, to: IndexPath)
     
     func remove(_ sections: [Int])
@@ -109,12 +113,6 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
     }
 
     
-    //MARK:- Retriving
-    
-
-
-
-    
     //MARK: - Add items
     
     public func add(_ item: ViewModelInterface) {
@@ -148,6 +146,16 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
         updater.reload(items)
     }
     
+    public func reload(_ section: Int) {
+        updater.reload(section)
+    }
+    
+    public func reload(_ sections: [Int]) {
+        updater.reload(sections)
+    }
+    
+    
+    
 
     //MARK: - Removing
     
@@ -176,6 +184,10 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
     
     public func replace<T>(_ item: T, on: ViewModelInterface) where T : ViewModelInterface & Equatable {
         updater.replace(item, with: on)
+    }
+    
+    public func replace(_ section: Int, on viewModels: [ViewModelInterface]) {
+        updater.replace(section, on: viewModels)
     }
     
     public func moveWithoutUpdate(from: IndexPath, to: IndexPath) {
