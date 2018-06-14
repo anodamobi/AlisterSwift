@@ -10,8 +10,15 @@ import Foundation
 import UIKit
 
 public protocol ReusableViewInterface {
+    
     func update(_ model: ViewModelInterface)
 }
+
+extension ReusableViewInterface {
+    func update(_ model: ViewModelInterface) { }
+}
+
+
 
 protocol ListControllerUpdateServiceDelegate: class {
     func allUpdatesFinished()
