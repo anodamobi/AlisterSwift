@@ -110,10 +110,11 @@ extension TableController: UITableViewDelegate {
     
     open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         // TODO: Prichesat'
+        editingCompletion?(editingStyle, indexPath)
+
         if editingStyle == .delete {
             storage.remove(indexPath)
         }
-        editingCompletion?(editingStyle, indexPath)
     }
     
     open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
