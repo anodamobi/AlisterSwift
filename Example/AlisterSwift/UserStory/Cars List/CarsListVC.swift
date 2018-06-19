@@ -54,15 +54,6 @@ class CarsListVC: UIViewController {
         }
     }
     
-    private func setupSearchController() {
-        // Enabling search feature
-        guard type == .search else { return }
-        searchBar.searchBarStyle = .minimal
-        searchBar.enablesReturnKeyAutomatically = true
-        navigationItem.titleView = searchBar
-        controller.attachSearchBar(searchBar)
-    }
-    
     private func setupStorage() {
         
         // Allow move cells
@@ -102,6 +93,15 @@ class CarsListVC: UIViewController {
         }
         
         setupSearchController()
+    }
+    
+    private func setupSearchController() {
+        // Enabling search feature
+        guard type == .search else { return }
+        searchBar.searchBarStyle = .minimal
+        searchBar.enablesReturnKeyAutomatically = true
+        navigationItem.titleView = searchBar
+        controller.attachSearchBar(searchBar)
     }
     
     private func showAlert(title: String, message: String = "") {

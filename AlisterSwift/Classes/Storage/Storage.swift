@@ -80,7 +80,12 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
     }
 
     public func animatableUpdate(_ block: @escaping (StorageUpdatableInterface) -> ()) {
-       update(shouldAnimate: true, block: block)
+        // MARK: Small hack
+        if #available(iOS 11.0, *) {
+            update(shouldAnimate: true, block: block)
+        } else {
+            update(shouldAnimate: false, block: block)
+        }
     }
     
     public func update(_ block: @escaping (StorageUpdatableInterface) -> ()) {

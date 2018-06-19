@@ -102,8 +102,7 @@ extension ListTableView: ListViewInterface {
     }
     
     var animationKey: String {
-        // TODO: Check if it works fine
-        return "transition"     //"UITableViewReloadDataAnimationKey"
+        return kCATransition //"UITableViewReloadDataAnimationKey"
     }
     
     func performUpdate(_ update: StorageUpdateModel, animated: Bool) {
