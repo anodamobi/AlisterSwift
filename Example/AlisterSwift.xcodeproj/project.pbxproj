@@ -30,7 +30,6 @@
 		D42BE8A020CFF47F00A0B0B9 /* CarsCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89320CFF47F00A0B0B9 /* CarsCollectionController.swift */; };
 		D42BE8A120CFF47F00A0B0B9 /* CarsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89420CFF47F00A0B0B9 /* CarsCollectionVC.swift */; };
 		D42BE8A220CFF47F00A0B0B9 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89620CFF47F00A0B0B9 /* CarCell.swift */; };
-		D42BE8A320CFF47F00A0B0B9 /* CarsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89720CFF47F00A0B0B9 /* CarsListController.swift */; };
 		D42BE8A420CFF47F00A0B0B9 /* CarsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89820CFF47F00A0B0B9 /* CarsListVC.swift */; };
 		D42BE8A520CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89920CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift */; };
 		D42BE8A620CFF47F00A0B0B9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE89B20CFF47F00A0B0B9 /* MainVC.swift */; };
@@ -80,7 +79,6 @@
 		D42BE89320CFF47F00A0B0B9 /* CarsCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsCollectionController.swift; sourceTree = "<group>"; };
 		D42BE89420CFF47F00A0B0B9 /* CarsCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsCollectionVC.swift; sourceTree = "<group>"; };
 		D42BE89620CFF47F00A0B0B9 /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
-		D42BE89720CFF47F00A0B0B9 /* CarsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsListController.swift; sourceTree = "<group>"; };
 		D42BE89820CFF47F00A0B0B9 /* CarsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsListVC.swift; sourceTree = "<group>"; };
 		D42BE89920CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsTableHeaderFooter.swift; sourceTree = "<group>"; };
 		D42BE89B20CFF47F00A0B0B9 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				D42BE89620CFF47F00A0B0B9 /* CarCell.swift */,
-				D42BE89720CFF47F00A0B0B9 /* CarsListController.swift */,
 				D42BE89820CFF47F00A0B0B9 /* CarsListVC.swift */,
 				D42BE89920CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift */,
 			);
@@ -499,7 +496,6 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				D42BE8A120CFF47F00A0B0B9 /* CarsCollectionVC.swift in Sources */,
 				D42BE8A620CFF47F00A0B0B9 /* MainVC.swift in Sources */,
-				D42BE8A320CFF47F00A0B0B9 /* CarsListController.swift in Sources */,
 				D42BE8A520CFF47F00A0B0B9 /* CarsTableHeaderFooter.swift in Sources */,
 				D42BE8A420CFF47F00A0B0B9 /* CarsListVC.swift in Sources */,
 				D42BE89D20CFF47F00A0B0B9 /* TestDataGenerator.swift in Sources */,

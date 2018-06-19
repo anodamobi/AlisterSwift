@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import AlisterSwift
 
 enum CarsListVCType {
     case search
@@ -17,14 +18,14 @@ enum CarsListVCType {
 
 class CarsListVC: UIViewController {
     
-    private var controller: CarsListController
+    private var controller: TableController
     private let tableView = UITableView()
     private let searchBar = UISearchBar()
     private let type: CarsListVCType
     
     init(type: CarsListVCType = .search) {
         self.type = type
-        controller = CarsListController(tableView: tableView, canMoveRows: type == .dragAndDrop)
+        controller = TableController(tableView: tableView)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,6 +37,14 @@ class CarsListVC: UIViewController {
         super.viewDidLoad()
         configureUI()
         setupStorage()
+        
+        controller.isEditingAllowed = true
+        controller.editingCompletion = { [unowned self] style, indexPath in
+            guard style == .delete else { return }
+            self.controller.storage.animatableUpdate({ change in
+                change.remove(indexPath)
+            })
+        }
     }
 
     private func configureUI() {
@@ -58,7 +67,7 @@ class CarsListVC: UIViewController {
         
         // Allow move cells
         if type == .dragAndDrop {
-            tableView.setEditing(true, animated: true)
+            controller.isMovingAllowed = true
         }
 
         // Registering cells/headers/footers
