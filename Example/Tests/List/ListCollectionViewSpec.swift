@@ -11,9 +11,9 @@ import Nimble
 import UIKit
 @testable import AlisterSwift
 
-class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+class ListCollectionViewDataSourceFixture: NSObject, UICollectionViewDataSource {
     
-    var datasource: [Int] = [1,2,3,4,5,6,7]
+    var datasource: [Int] = [1, 2, 3, 4, 5, 6, 7]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return datasource.count
@@ -24,22 +24,23 @@ class ListCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     }
 }
 
-class ListCollectionViewTests: QuickSpec {
+class ListCollectionViewSpec: QuickSpec {
     
+    // swiftlint:disable function_body_length
     override func spec() {
         
         describe("ListCollectionView") {
             
-            var dataSource: ListCollectionViewDataSource!
+            var dataSource: ListCollectionViewDataSourceFixture!
             var collectionView: UICollectionView!
             var listCollectionView: ListCollectionView!
             
             beforeEach {
-                dataSource = ListCollectionViewDataSource()
+                dataSource = ListCollectionViewDataSourceFixture()
                 collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
                 listCollectionView = ListCollectionView(collectionView: collectionView)
                 listCollectionView.registerCellClass(UICollectionViewCell.self, forReuseIdentifier: "ANODA")
-                listCollectionView.setDataSource(dataSource)
+                listCollectionView.dataSource = dataSource
             }
             
             context("table data is consistent", {
@@ -51,10 +52,6 @@ class ListCollectionViewTests: QuickSpec {
                     expect(listCollectionView.scrollView).to(beAKindOf(UIScrollView.self))
                 }
                 
-                it("default cell is kind of `UITableViewCell`") {
-                    expect(listCollectionView.defaultCell).to(beAKindOf(UICollectionViewCell.self))
-                }
-                
                 it("dataSource not nil") {
                     expect(collectionView.dataSource).notTo(beNil())
                 }
@@ -62,8 +59,8 @@ class ListCollectionViewTests: QuickSpec {
             
             context("perfoming update") {
                 
-                var updateModel = StorageUpdateModel()
-                afterEach {
+                var updateModel: StorageUpdateModel!
+                beforeEach {
                     updateModel = StorageUpdateModel()
                 }
                 
@@ -117,7 +114,9 @@ class ListCollectionViewTests: QuickSpec {
                 
                 it("removing all items") {
                     
-                    updateModel.addDeletedIndexPaths(dataSource.datasource.enumerated().map { IndexPath(row: $0.offset, section: 0) })
+                    updateModel.addDeletedIndexPaths(dataSource.datasource.enumerated().map {
+                        IndexPath(row: $0.offset, section: 0)
+                    })
                     dataSource.datasource.removeAll()
                     listCollectionView.performUpdate(updateModel, animated: true)
                     

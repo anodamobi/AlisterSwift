@@ -19,7 +19,8 @@ class UpdateDelegateFixture: StorageUpdateOperationInterface {
         self.update = update
     }
 }
-
+    // swiftlint:disable type_body_length
+    // swiftlint:disable function_body_length
 class StorageUpdaterSpec: QuickSpec {
     
     override func spec() {
@@ -375,5 +376,3 @@ class StorageUpdaterSpec: QuickSpec {
         }
     }
 }
-
-

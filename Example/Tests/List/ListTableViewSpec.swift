@@ -13,7 +13,7 @@ import UIKit
 
 class ListViewDataSource: NSObject, UITableViewDataSource {
     
-    var datasource: [Int] = [1,2,3,4,5,6,7]
+    var datasource: [Int] = [1, 2, 3, 4, 5, 6, 7]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
@@ -24,8 +24,9 @@ class ListViewDataSource: NSObject, UITableViewDataSource {
     }
 }
 
-class ListTableViewTests: QuickSpec {
+class ListTableViewSpec: QuickSpec {
     
+    // swiftlint:disable function_body_length
     override func spec() {
         
         describe("ListTableView") {
@@ -39,26 +40,15 @@ class ListTableViewTests: QuickSpec {
                 tableView = UITableView()
                 listTableView = ListTableView(tableView: tableView)
                 listTableView.registerCellClass(UITableViewCell.self, forReuseIdentifier: "ANODA")
-                listTableView.setDataSource(dataSource)
+                listTableView.dataSource = dataSource
             }
             
             context("table data is consistent", {
                 it("scroll view exists") {
                     expect(listTableView.scrollView).notTo(beNil())
-                }
-                
-                it("table view can be casted to scroll view") {
                     expect(listTableView.scrollView).to(beAKindOf(UIScrollView.self))
                 }
-                
-                it("default cell is kind of `UITableViewCell`") {
-                    expect(listTableView.defaultCell).to(beAKindOf(UITableViewCell.self))
-                }
-                
-                it("default supplementary view is kind of `UITableViewHeaderFooterView`") {
-                    expect(listTableView.defaultSupplementary).to(beAKindOf(UITableViewHeaderFooterView.self))
-                }
-                
+
                 it("dataSource not nil") {
                     expect(tableView.dataSource).notTo(beNil())
                 }
@@ -120,7 +110,7 @@ class ListTableViewTests: QuickSpec {
                 }
                 
                 it("reload data") {
-                    dataSource.datasource = [5,4,3]
+                    dataSource.datasource = [5, 4, 3]
                     listTableView.reloadData()
                     
                     let numberOfRows = tableView.numberOfRows(inSection: 0)

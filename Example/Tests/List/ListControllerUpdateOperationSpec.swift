@@ -11,7 +11,7 @@ import Quick
 import Nimble
 @testable import AlisterSwift
 
-class ListControllerUpdateOperationTests: QuickSpec {
+class ListControllerUpdateOperationSpec: QuickSpec {
     
     override func spec() {
         

@@ -53,9 +53,9 @@ class ListControllerUpdateOperation: Operation, StorageListUpdateOperationInterf
     
     override func start() {
         if (isCancelled) {
-            self.isFinished = true
+            finishOp()
         } else {
-            self.isExecuting = true
+            isExecuting = true
             main()
         }
     }
@@ -66,8 +66,7 @@ class ListControllerUpdateOperation: Operation, StorageListUpdateOperationInterf
             if let model = self.updateModel, model.isEmpty() == false {
                 self.performAnimatedUpdate(model)
             } else {
-                isFinished = true
-                isExecuting = false
+                finishOp()
             }
         }
     }
@@ -76,22 +75,25 @@ class ListControllerUpdateOperation: Operation, StorageListUpdateOperationInterf
     
     private func performAnimatedUpdate(_ update: StorageUpdateModel) {
         
-        if update.isRequireReload() == false, shouldAnimate == true { //TODO: why is animated is here???
+        if update.isRequireReload() == false, shouldAnimate == true {
             CATransaction.begin()
-            CATransaction.setCompletionBlock { [weak self] in
-                self?.isFinished = true
-                self?.isExecuting = false
+            CATransaction.setCompletionBlock { [unowned self] in
+                self.finishOp()
             }
             delegate?.performListViewUpdate(update, animated: true)
             CATransaction.commit()
         } else {
-            isFinished = true
-            isExecuting = false
+            finishOp()
             guard let name = name else {
                 assert(false, "storageID should not be empty")
                 return
             }
             delegate?.storageNeedsReload(name, isAnimated: false)
         }
+    }
+    
+    private func finishOp() {
+        isFinished = true
+        isExecuting = false
     }
 }

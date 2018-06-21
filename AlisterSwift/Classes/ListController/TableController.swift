@@ -15,6 +15,13 @@ open class TableController: ListController {
     
     public var shouldDisplayHeaderOnEmptySection = true
     public var shouldDisplayFooterOnEmptySection = true
+    public var isEditingAllowed = false
+    public var isMovingAllowed = false {
+        didSet {
+            tableView.setEditing(isMovingAllowed, animated: true)
+        }
+    }
+    public var editingCompletion: ((UITableViewCellEditingStyle, IndexPath) -> Void)?
     
     public init(tableView: UITableView) {
         self.tableView = tableView
@@ -99,6 +106,26 @@ extension TableController: UITableViewDelegate {
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return storage.object(at: indexPath)?.itemSize?.height ?? tableView.rowHeight
+    }
+    
+    open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return isEditingAllowed
+    }
+    
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        editingCompletion?(editingStyle, indexPath)
+    }
+    
+    open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return isMovingAllowed
+    }
+    
+    open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return isMovingAllowed ? .none : .delete
+    }
+    
+    open func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return !isMovingAllowed
     }
 }
 

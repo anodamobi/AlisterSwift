@@ -4,11 +4,12 @@ platform :ios, '10.0'
 target 'AlisterSwift_Example' do
   pod 'AlisterSwift', :path => '../'
   pod 'SnapKit'
+  pod 'SwiftLint'
   
   target 'AlisterSwift_Tests' do
     inherit! :search_paths
 
-#    pod 'Quick', '~> 1.2.0'
-#    pod 'Nimble', '~> 7.1.2'
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.1.2'
   end
 end

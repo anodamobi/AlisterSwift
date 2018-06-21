@@ -12,7 +12,7 @@ import Nimble
 @testable import AlisterSwift
 
 class StorageRemoverSpec: QuickSpec {
-    
+    // swiftlint:disable function_body_length
     override func spec() {
         
         var updater: StorageUpdater!
