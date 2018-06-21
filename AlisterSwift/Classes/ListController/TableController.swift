@@ -113,7 +113,6 @@ extension TableController: UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        // TODO: Prichesat'
         editingCompletion?(editingStyle, indexPath)
     }
     
