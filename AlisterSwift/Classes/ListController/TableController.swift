@@ -127,6 +127,8 @@ extension TableController: UITableViewDelegate {
     open func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return !isMovingAllowed
     }
+    
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
 }
 
 //MARK: - Data Source
