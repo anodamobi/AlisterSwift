@@ -155,6 +155,8 @@ extension TableController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.accessibilityLabel = "\(type(of: cell)):Section\(indexPath.section):Row\(indexPath.row)"
+        
         return cell
     }
     
