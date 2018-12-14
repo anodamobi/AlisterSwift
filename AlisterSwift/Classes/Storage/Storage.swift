@@ -12,6 +12,9 @@ typealias StorageUpdateClosure = (StorageUpdatableInterface)->()
 
 public protocol StorageUpdatableInterface {
     
+    //TODO: doc
+    func addSection(at index: Int)
+    
     func add(_ item: ViewModelInterface)
     func add(_ item: ViewModelInterface, to: Int)
     func add(_ item: ViewModelInterface, at: IndexPath)
@@ -120,6 +123,10 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
 
     
     //MARK: - Add items
+    //TODO: unit test & doc
+    public func addSection(at index: Int) {
+        updater.addSection(at: index)
+    }
     
     public func add(_ item: ViewModelInterface) {
         updater.add([item], to: 0)

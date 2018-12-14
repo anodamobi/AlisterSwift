@@ -81,8 +81,14 @@ class CarsListVC: UIViewController {
         controller.storage.update { [unowned self] update in
             
             // Adding rows to the table
-            update.add(modelsSection1)
-            update.add(modelsSection2, to: 1)
+//            update.add(modelsSection1)
+//            update.add(modelsSection2, to: 1)
+            
+            update.addSection(at: 0)
+            update.addSection(at: 0)
+            update.addSection(at: 0)
+            update.addSection(at: 0)
+            update.addSection(at: 0)
             
             // Adding header and footer to some sections
             if self.type == .headerFooter {

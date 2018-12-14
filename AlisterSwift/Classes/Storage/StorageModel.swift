@@ -65,7 +65,7 @@ protocol StorageModelInterface {
      @param section section object to add
      */
     
-    func addSection(_ section: SectionModel)
+    func addSection(_ section: SectionModel, at: Int?)
     
     func removeSection(_ index: Int)
     
@@ -95,8 +95,13 @@ class StorageModel: StorageModelInterface {
         return nil
     }
     
-    func addSection(_ section: SectionModel) {
-        sectionModels.append(section)
+    func addSection(_ section: SectionModel, at: Int? = nil) {
+        if let index = at {
+            //TODO: index out of bounds
+            sectionModels.insert(section, at: index)
+        } else {
+            sectionModels.append(section)
+        }
     }
 
     public func itemsInSection(_ index: Int) -> [ViewModelInterface] {
