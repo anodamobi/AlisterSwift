@@ -17,12 +17,12 @@ fileprivate enum EntityType: Equatable, Hashable {
     case cell
     case supplementary(kind: String)
     
-    var hashValue: Int {
+    func hash(into hasher: inout Hasher) {
         switch self {
         case .cell:
-            return 0
+            hasher.combine(0)
         case .supplementary(let kind):
-            return kind.hashValue + 1
+            hasher.combine(kind.hashValue + 1)
         }
     }
     

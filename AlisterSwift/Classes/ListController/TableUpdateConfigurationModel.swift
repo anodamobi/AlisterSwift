@@ -10,12 +10,12 @@ import UIKit
 
 class TableUpdateConfigurationModel {
     
-    var insertSectionAnimation: UITableViewRowAnimation = .none
-    var deleteSectionAnimation: UITableViewRowAnimation = .none
-    var reloadSectionAnimation: UITableViewRowAnimation = .none
-    var insertRowAnimation: UITableViewRowAnimation = .none
-    var deleteRowAnimation: UITableViewRowAnimation = .none
-    var reloadRowAnimation: UITableViewRowAnimation = .none
+    var insertSectionAnimation: UITableView.RowAnimation = .none
+    var deleteSectionAnimation: UITableView.RowAnimation = .none
+    var reloadSectionAnimation: UITableView.RowAnimation = .none
+    var insertRowAnimation: UITableView.RowAnimation = .none
+    var deleteRowAnimation: UITableView.RowAnimation = .none
+    var reloadRowAnimation: UITableView.RowAnimation = .none
     
     static func defaultModel() -> TableUpdateConfigurationModel {
         
