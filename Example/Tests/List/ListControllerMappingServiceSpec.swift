@@ -14,9 +14,10 @@ import Quick
 class ViewModelExample: Hashable, ViewModelInterface {
     var id: String = ""
     
-    var hashValue: Int {
-        return id.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
+
     // swiftlint:disable operator_whitespace
     static func ==(lhs: ViewModelExample, rhs: ViewModelExample) -> Bool {
         return lhs.id == rhs.id

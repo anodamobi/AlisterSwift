@@ -46,10 +46,10 @@ extension ListViewInterface {
         reloadData()
         if animated {
             let animation = CATransition()
-            animation.type = kCATransitionFromBottom
-            animation.subtype = kCATransitionFromBottom
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            animation.fillMode = kCAFillModeBoth
+            animation.type = .reveal
+            animation.subtype = .fromBottom
+            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            animation.fillMode = .both
             animation.duration = reloadingDuration
             scrollView?.layer.add(animation, forKey: animationKey)
         }

@@ -35,4 +35,9 @@ struct MovedIndexPath: MovedIndexPathInterface, Equatable, Hashable, CustomStrin
     public var hashValue: Int {
         return from.hashValue + to.hashValue
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(from)
+        hasher.combine(to)
+    }
 }
