@@ -22,5 +22,5 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'AlisterSwift/Classes/**/*'
 
-  s.swift_version = '4.1'
+  s.swift_version = '5.0'
 end
