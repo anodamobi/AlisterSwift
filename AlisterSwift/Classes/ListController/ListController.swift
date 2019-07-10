@@ -105,6 +105,7 @@ extension ListController: SearchManagerDelegate {
     
     func didCancelSearch() {
         storage.updatesHandler = updateService
+        storage.updatesHandler?.storageNeedsReload(storageID: storage.storageID, shouldAnimate: false)
     }
     
     func searchStorageHasBeenCreated(_ storage: Storage) {
