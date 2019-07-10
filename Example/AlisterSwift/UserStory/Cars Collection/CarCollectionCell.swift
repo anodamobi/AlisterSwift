@@ -28,7 +28,7 @@ class CarCollectionCell: UICollectionViewCell, ReusableViewInterface {
         title.textAlignment = .center
         title.numberOfLines = 0
         contentView.addSubview(title)
-        title.snp.makeConstraints { (make) in
+        title.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }

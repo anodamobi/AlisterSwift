@@ -40,7 +40,7 @@ class CarsTableHeaderFooter: UITableViewHeaderFooterView, ReusableViewInterface 
         backgroundView = UIView(frame: CGRect.zero)
         backgroundView?.backgroundColor = .lightGray
         addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
+        titleLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }

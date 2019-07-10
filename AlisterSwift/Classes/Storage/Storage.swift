@@ -26,6 +26,7 @@ public protocol StorageUpdatableInterface {
     
     func remove<T: ViewModelInterface & Equatable>(_ item: T)
     func remove(_ at: IndexPath)
+    func remove(_ at: [IndexPath])
     func remove<T: ViewModelInterface & Equatable>(_ items: [T])
     func removeAll()
     
@@ -73,13 +74,18 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
      */
     let storageModel = StorageModel()
 
-    init() {
+    public init() {
         remover = StorageRemover(storageModel: storageModel)
         updater = StorageUpdater(model: storageModel)
     }
 
     public func animatableUpdate(_ block: @escaping (StorageUpdatableInterface) -> ()) {
-       update(shouldAnimate: true, block: block)
+        // MARK: Small hack
+        if #available(iOS 11.0, *) {
+            update(shouldAnimate: true, block: block)
+        } else {
+            update(shouldAnimate: false, block: block)
+        }
     }
     
     public func update(_ block: @escaping (StorageUpdatableInterface) -> ()) {
@@ -161,6 +167,10 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
     
     public func remove(_ indexPath: IndexPath) {
         remover.remove([indexPath])
+    }
+    
+    public func remove(_ indexPaths: [IndexPath]) {
+        remover.remove(indexPaths)
     }
     
     public func remove<T>(_ item: T) where T : ViewModelInterface & Equatable {

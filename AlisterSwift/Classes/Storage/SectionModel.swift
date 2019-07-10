@@ -71,13 +71,13 @@ protocol SectionModelInterface {
 
 public class SectionModel: SectionModelInterface {
     
-    var objects: [ViewModelInterface] {
+    public var objects: [ViewModelInterface] {
         get {
             return items
         }
     }
     
-    var numberOfObjects: Int {
+    public var numberOfObjects: Int {
         get {
             return items.count
         }

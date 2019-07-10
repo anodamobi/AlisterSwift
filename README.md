@@ -19,6 +19,11 @@ it, simply add the following line to your Podfile:
 pod 'AlisterSwift'
 ```
 
+## Templates
+
+To use xcode templates please copy folder `Templates` at `~/Library/Developer/Xcode/`
+
+
 ## Authors
 
 Oksana Kovalchuk, oksana@anoda.mobi

@@ -24,6 +24,8 @@ protocol ListControllerUpdateServiceDelegate: class {
     func allUpdatesFinished()
 }
 
+public typealias SelectionClosure = (ViewModelInterface, IndexPath)-> ()
+
 open class ListController: NSObject {
     
     public var storage: Storage {
@@ -36,6 +38,7 @@ open class ListController: NSObject {
     var updateService: UpdateService
     
     var updatesFinishedTrigger: (()->())?
+    public var selection: SelectionClosure?
     
     public lazy var searchManager: SearchManager = {
         let manager = SearchManager()
@@ -72,7 +75,6 @@ open class ListController: NSObject {
     public func attachSearchBar(_ searchBar: UISearchBar) {
         searchManager.searchBar = searchBar
     }
-
     
     public func configureCells(_ block: (ListControllerReusableInterface) -> ()) {
         block(itemsHandler)

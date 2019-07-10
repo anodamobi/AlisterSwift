@@ -100,6 +100,11 @@ extension CollectionController: UICollectionViewDelegate {
     
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        activeStorage().object(at: indexPath)?.selection?()
+        
+        if let closure = activeStorage().object(at: indexPath)?.selection {
+            closure()
+        } else if let viewModel = activeStorage().object(at: indexPath) {
+            selection?(viewModel, indexPath)
+        }
     }
 }

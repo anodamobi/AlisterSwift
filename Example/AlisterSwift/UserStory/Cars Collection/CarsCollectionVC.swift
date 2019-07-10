@@ -34,18 +34,18 @@ class CarsCollectionVC: UIViewController {
     private func configureUI() {
         collectionView.backgroundColor = .white
         view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { (make) in
+        collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
     private func setupStorage() {
-        controller.configureCells { (config) in
+        controller.configureCells { config in
             config.register(cell: CarCollectionCell.self, for: CarCellViewModel.self)
         }
 
         let models = TestDataGenerator.carModels()
-        controller.storage.update { (update) in
+        controller.storage.update { update in
             update.add(models)
         }
     }

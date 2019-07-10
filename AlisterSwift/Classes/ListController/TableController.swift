@@ -15,6 +15,13 @@ open class TableController: ListController {
     
     public var shouldDisplayHeaderOnEmptySection = true
     public var shouldDisplayFooterOnEmptySection = true
+    public var isEditingAllowed = false
+    public var isMovingAllowed = false {
+        didSet {
+            tableView.setEditing(isMovingAllowed, animated: true)
+        }
+    }
+    public var editingCompletion: ((UITableViewCell.EditingStyle, IndexPath) -> Void)?
     
     public init(tableView: UITableView) {
         self.tableView = tableView
@@ -53,7 +60,7 @@ open class TableController: ListController {
             } else if  height > 0 {
                 return height
             } else {
-                return UITableViewAutomaticDimension
+                return UITableView.automaticDimension
             }
         }
         return height
@@ -98,7 +105,27 @@ extension TableController: UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return storage.object(at: indexPath)?.itemSize?.height ?? 0
+        return storage.object(at: indexPath)?.itemSize?.height ?? tableView.rowHeight
+    }
+    
+    open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return isEditingAllowed
+    }
+    
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        editingCompletion?(editingStyle, indexPath)
+    }
+    
+    open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return isMovingAllowed
+    }
+    
+    open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return isMovingAllowed ? .none : .delete
+    }
+    
+    open func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return !isMovingAllowed
     }
 }
 
@@ -133,7 +160,12 @@ extension TableController: UITableViewDataSource {
     
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        activeStorage().object(at: indexPath)?.selection?()
+        
+        if let closure = activeStorage().object(at: indexPath)?.selection {
+            closure()
+        } else if let viewModel = activeStorage().object(at: indexPath) {
+            selection?(viewModel, indexPath)
+        }
     }
     
     open func tableView(_ tableView: UITableView,
