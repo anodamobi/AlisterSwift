@@ -45,6 +45,8 @@ extension CollectionController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        cell.accessibilityLabel = "\(type(of: cell)):Section\(indexPath.section):Row\(indexPath.row)"
+        
         return cell
     }
     
