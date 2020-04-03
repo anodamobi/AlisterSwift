@@ -18,9 +18,9 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/anodamobi/AlisterSwift.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/oks_ios'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'AlisterSwift/Classes/**/*'
 
-  s.swift_version = '4.1'
+  s.swift_version = '5.0'
 end
