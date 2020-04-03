@@ -62,6 +62,17 @@ class StorageSpec: QuickSpec {
                 expect(section0Items.count).toEventually(equal(2), timeout: 1.0)
                 expect(section1Items.count).toEventually(equal(1), timeout: 1.0)
             })
+
+            it("Adding elements at multiple IndexPaths", closure: {
+                storage.add([model1, model2], at: [IndexPath(row: 0, section: 0), IndexPath(row: 1, section: 0)])
+                storage.add([model3], at: [IndexPath(row: 0, section: 1)])
+
+                let section0Items = storage.itemsIn(section: 0)
+                let section1Items = storage.itemsIn(section: 1)
+
+                expect(section0Items.count).toEventually(equal(2), timeout: 1.0)
+                expect(section1Items.count).toEventually(equal(1), timeout: 1.0)
+            })
         }
         
         describe("Get models tests") {

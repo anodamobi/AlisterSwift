@@ -86,6 +86,8 @@ protocol StorageUpdaterInterface {
     
     func add(_ item: ViewModelInterface, at: IndexPath)
     
+    func add(_ items: [ViewModelInterface], at paths: [IndexPath])
+    
     
     /**
      Replaces specified item with new one.
@@ -227,6 +229,22 @@ struct StorageUpdater: StorageUpdaterInterface {
             update.addInsertedSectionIndexes(insertedSections)
             update.addInsertedIndexPaths([indexPath])
         }
+    }
+    
+    func add(_ items: [ViewModelInterface], at paths: [IndexPath]) {
+        var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }
+        
+        guard let sectionIndex = paths.first?.section else { return }
+        let insertedSections = createSectionIfNotExist(sectionIndex)
+        
+        let sectionModel = StorageLoader.section(at: sectionIndex, storage: storageModel) //TODO: remove optional
+        
+        for path in paths.enumerated() {
+            sectionModel?.insert(items[path.offset], at: path.element.row)
+        }
+        
+        update.addInsertedSectionIndexes(insertedSections)
+        update.addInsertedIndexPaths(paths)
     }
     
     func replace<T>(_ item: T, with newItem: ViewModelInterface) where T : ViewModelInterface & Equatable {
