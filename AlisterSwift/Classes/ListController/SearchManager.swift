@@ -68,7 +68,7 @@ public class SearchManager: NSObject {
     }
     
     private func handleSearch(isSearching: Bool) {
-        if isSearching, !self.isSearching {
+        if !isSearching, !self.isSearching {
             storage?.updatesHandler = nil
             delegate?.didCancelSearch()
         } else {

@@ -91,11 +91,11 @@ class ListCollectionView: ListViewInterface {
     }
     
     var defaultHeaderKind: String {
-        return UICollectionElementKindSectionHeader
+        return UICollectionView.elementKindSectionHeader
     }
     
     var defaultFooterKind: String {
-        return UICollectionElementKindSectionFooter
+        return UICollectionView.elementKindSectionFooter
     }
     
     var animationKey: String {

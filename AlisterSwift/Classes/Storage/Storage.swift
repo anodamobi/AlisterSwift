@@ -21,7 +21,8 @@ public protocol StorageUpdatableInterface {
     
     func add(_ items: [ViewModelInterface])
     func add(_ items: [ViewModelInterface], to: Int)
-
+    func add(_ items: [ViewModelInterface], at paths: [IndexPath])
+    
     func reload<T: ViewModelInterface & Equatable>(_ item: T)
     func reload<T: ViewModelInterface & Equatable>(_ items: [T])
     func reload(_ section: Int)
@@ -146,6 +147,10 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
     
     public func add(_ item: ViewModelInterface, at: IndexPath) {
         updater.add(item, at: at)
+    }
+    
+    public func add(_ items: [ViewModelInterface], at paths: [IndexPath]) {
+        updater.add(items, at: paths)
     }
     
     

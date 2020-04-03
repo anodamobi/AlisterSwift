@@ -21,7 +21,7 @@ open class TableController: ListController {
             tableView.setEditing(isMovingAllowed, animated: true)
         }
     }
-    public var editingCompletion: ((UITableViewCellEditingStyle, IndexPath) -> Void)?
+    public var editingCompletion: ((UITableViewCell.EditingStyle, IndexPath) -> Void)?
     
     public init(tableView: UITableView) {
         self.tableView = tableView
@@ -60,7 +60,7 @@ open class TableController: ListController {
             } else if  height > 0 {
                 return height
             } else {
-                return UITableViewAutomaticDimension
+                return UITableView.automaticDimension
             }
         }
         return height
@@ -112,7 +112,7 @@ extension TableController: UITableViewDelegate {
         return isEditingAllowed
     }
     
-    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         editingCompletion?(editingStyle, indexPath)
     }
     
@@ -120,13 +120,15 @@ extension TableController: UITableViewDelegate {
         return isMovingAllowed
     }
     
-    open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return isMovingAllowed ? .none : .delete
     }
     
     open func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return !isMovingAllowed
     }
+    
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {}
 }
 
 //MARK: - Data Source
