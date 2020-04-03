@@ -22,7 +22,15 @@ protocol StorageUpdaterInterface {
     
     var updateDelegate: StorageUpdateOperationInterface? { get }
     
-    //TODO: doc
+    /**
+     Inserts section at specified index. If section index higher than existing
+     sections count, update will be ignored.
+     Sends to delegate UpdateModel that contains diff for current operation.
+     If operation was terminated update will be empty.
+     
+     @param index  sections index to insert.
+     */
+    
     func addSection(at index: Int)
 
     
@@ -187,12 +195,13 @@ struct StorageUpdater: StorageUpdaterInterface {
         storageModel = model
     }
     
-    //TODO: unit test
     func addSection(at index: Int) {
         var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }
-
+        
         let set = insertSection(at: index)
-        update.addInsertedSectionIndexes(set)
+        if set.isEmpty == false {
+            update.addInsertedSectionIndexes(set)
+        }
     }
     
     func add(_ item: ViewModelInterface) {
@@ -378,11 +387,12 @@ struct StorageUpdater: StorageUpdaterInterface {
         return insertedIndexes
     }
     
-    //TODO: unit test
     private func insertSection(at index: Int) -> IndexSet {
         var insertedIndexes = IndexSet()
         
-        storageModel.addSection(SectionModel())
+        guard storageModel.numberOfSections >= index else { return IndexSet() }
+        
+        storageModel.addSection(SectionModel(), at: index)
         insertedIndexes.update(with: index)
         return insertedIndexes
     }

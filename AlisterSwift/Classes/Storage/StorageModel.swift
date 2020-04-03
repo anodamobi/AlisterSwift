@@ -97,7 +97,6 @@ class StorageModel: StorageModelInterface {
     
     func addSection(_ section: SectionModel, at: Int? = nil) {
         if let index = at {
-            //TODO: index out of bounds
             sectionModels.insert(section, at: index)
         } else {
             sectionModels.append(section)
