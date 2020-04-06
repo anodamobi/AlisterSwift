@@ -16,6 +16,25 @@ class StorageSpec: QuickSpec {
     // swiftlint:disable function_body_length
     override func spec() {
         
+        describe("Add sections tests") {
+            var storage: Storage!
+            
+            beforeEach {
+                storage = Storage()
+            }
+            
+            it("Adding sections at diffent indexes", closure: {
+                storage.addSection(at: 0)
+                storage.addSection(at: 1)
+                storage.addSection(at: 2)
+                storage.addSection(at: 2)
+                storage.addSection(at: 10)
+                
+                let sections = storage.sections()
+                expect(sections.count).toEventually(equal(4), timeout: 1.0)
+            })
+        }
+        
         describe("Add models tests") {
             
             var storage: Storage!

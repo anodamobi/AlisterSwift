@@ -23,6 +23,18 @@ protocol StorageUpdaterInterface {
     var updateDelegate: StorageUpdateOperationInterface? { get }
     
     /**
+     Inserts section at specified index. If section index higher than existing
+     sections count, update will be ignored.
+     Sends to delegate UpdateModel that contains diff for current operation.
+     If operation was terminated update will be empty.
+     
+     @param index  sections index to insert.
+     */
+    
+    func addSection(at index: Int)
+
+    
+    /**
      Adds item to section at zero index.
      Sends to delegate UpdateModel that contains diff for current operation.
      If operation was terminated update will be empty.
@@ -113,7 +125,7 @@ protocol StorageUpdaterInterface {
     
     
     func moveWithoutUpdate(from: IndexPath, to: IndexPath)
-
+    
     
     
     /**
@@ -178,11 +190,20 @@ struct StorageUpdater: StorageUpdaterInterface {
     
     var updateDelegate: StorageUpdateOperationInterface? = nil
     private var storageModel: StorageModel
-
+    
     init(model: StorageModel) {
         storageModel = model
     }
-
+    
+    func addSection(at index: Int) {
+        var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }
+        
+        let set = insertSection(at: index)
+        if set.isEmpty == false {
+            update.addInsertedSectionIndexes(set)
+        }
+    }
+    
     func add(_ item: ViewModelInterface) {
         add([item], to: 0)
     }
@@ -214,7 +235,7 @@ struct StorageUpdater: StorageUpdaterInterface {
             update.addInsertedIndexPaths(indexPaths)
         }
     }
-
+    
     func add(_ item: ViewModelInterface, at indexPath: IndexPath) {
         var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }
         
@@ -269,7 +290,7 @@ struct StorageUpdater: StorageUpdaterInterface {
     func moveWithoutUpdate(from: IndexPath, to: IndexPath) {
         move(from: from, to: to, handleUpdate: false)
     }
-
+    
     func move(from: IndexPath, to: IndexPath) {
         move(from: from, to: to, handleUpdate: true)
     }
@@ -344,7 +365,7 @@ struct StorageUpdater: StorageUpdaterInterface {
         let movedIP = MovedIndexPath(from: from, to: to)
         update.addMovedIndexPaths([movedIP])
     }
-
+    
     /**
      Generates empty sections to match count with specified index.
      Sends to delegate UpdateModel that contains diff for current operation.
@@ -352,20 +373,29 @@ struct StorageUpdater: StorageUpdaterInterface {
      @param sectionIndex section index up to what all section should be created
      @return IndexSet* that contains indexes of all creted sections.
      */
-   private  func createSectionIfNotExist(_ section: Int) -> IndexSet {
+    private func createSectionIfNotExist(_ section: Int) -> IndexSet {
         var insertedIndexes = IndexSet()
-    
+        
         guard section >= storageModel.numberOfSections else {
             return insertedIndexes
         }
-    
+        
         for index in (storageModel.numberOfSections)...section {
             storageModel.addSection(SectionModel())
             insertedIndexes.update(with: index)
         }
         return insertedIndexes
     }
-
+    
+    private func insertSection(at index: Int) -> IndexSet {
+        var insertedIndexes = IndexSet()
+        
+        guard storageModel.numberOfSections >= index else { return IndexSet() }
+        
+        storageModel.addSection(SectionModel(), at: index)
+        insertedIndexes.update(with: index)
+        return insertedIndexes
+    }
     
     private func updateSupplementary(kind: String, section: Int, model: ViewModelInterface) {
         var update = StorageUpdateModel(); defer { updateDelegate?.collect(update) }

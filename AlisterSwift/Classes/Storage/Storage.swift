@@ -12,6 +12,8 @@ typealias StorageUpdateClosure = (StorageUpdatableInterface)->()
 
 public protocol StorageUpdatableInterface {
     
+    func addSection(at index: Int)
+    
     func add(_ item: ViewModelInterface)
     func add(_ item: ViewModelInterface, to: Int)
     func add(_ item: ViewModelInterface, at: IndexPath)
@@ -119,6 +121,12 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
         updateFooter(supplementaryKind: footerKind)
     }
 
+    
+    //MARK: - Add Sections
+    
+    public func addSection(at index: Int) {
+        updater.addSection(at: index)
+    }
     
     //MARK: - Add items
     
