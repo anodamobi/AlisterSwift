@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name             = 'AlisterSwift'
-  s.version          = '0.1.1'
+  s.version          = '1.0.0'
   s.summary          = 'Table Helper'
   s.description      = 'Table and Collection Helper'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+No more boilerplate code with tables and collections!
                        DESC
   s.homepage         = 'https://github.com/anodamobi/AlisterSwift'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

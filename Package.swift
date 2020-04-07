@@ -29,5 +29,6 @@ let package = Package(
         .testTarget(
             name: "AlisterSwiftTests",
             dependencies: ["AlisterSwift", "Nimble", "Quick"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
