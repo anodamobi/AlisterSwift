@@ -1,0 +1,27 @@
+PODS:
+  - AlisterSwift (0.1.1)
+  - SnapKit (5.0.0)
+  - SwiftLint (0.32.0)
+
+DEPENDENCIES:
+  - AlisterSwift (from `../`)
+  - SnapKit
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  AlisterSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AlisterSwift: 5e682fcec5496d7b00557cbc9050ca4b020f0607
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
+
+PODFILE CHECKSUM: ff3457169d57c040b45eb12ab20bc472cdc42c17
+
+COCOAPODS: 1.8.4
