@@ -35,6 +35,11 @@ DerivedData
 
 # Swift Package Manager
 .build/
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
 
 # CocoaPods
 Pods/

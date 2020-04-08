@@ -4,4 +4,5 @@ xcode_scheme: AlisterSwift-Package
 osx_image: xcode11.4
 xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 11
 install:
+    - swift package generate-xcodeproj
     - swift package update
