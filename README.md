@@ -4,11 +4,20 @@
 [![License](https://img.shields.io/cocoapods/l/AlisterSwift.svg?style=flat)](https://cocoapods.org/pods/AlisterSwift)
 [![Platform](https://img.shields.io/cocoapods/p/AlisterSwift.svg?style=flat)](https://cocoapods.org/pods/AlisterSwift)
 
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/AlisterSwift.svg)](https://cocoapods.org/pods/AlisterSwift)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![Build Status](https://api.travis-ci.org/anodamobi/AlisterSwift.svg?branch=master)](https://travis-ci.org/anodamobi/AlisterSwift)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Run
+
+For building on a local machine, generate xcodeproj first:
+```ruby
+swift package generate-xcodeproj
+```
 
 ## Installation
 

@@ -22,5 +22,5 @@ No more boilerplate code with tables and collections!
 
   s.source_files = 'Sources/AlisterSwift/**/*'
 
-  s.swift_version = '5.0'
+  s.swift_version = '5.2'
 end
