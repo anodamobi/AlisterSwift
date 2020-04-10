@@ -1,21 +1,15 @@
 PODS:
-  - AlisterSwift (0.1.0)
-  - Nimble (8.0.1)
-  - Quick (2.1.0)
+  - AlisterSwift (0.1.1)
   - SnapKit (5.0.0)
   - SwiftLint (0.32.0)
 
 DEPENDENCIES:
   - AlisterSwift (from `../`)
-  - Nimble
-  - Quick
   - SnapKit
   - SwiftLint
 
 SPEC REPOS:
   trunk:
-    - Nimble
-    - Quick
     - SnapKit
     - SwiftLint
 
@@ -24,12 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AlisterSwift: da910c40862bcfa8340458c498de5da441d3eb4f
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  AlisterSwift: 5e682fcec5496d7b00557cbc9050ca4b020f0607
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
 
-PODFILE CHECKSUM: 78f51a043c3986116201f437da83e560ef8e1851
+PODFILE CHECKSUM: ff3457169d57c040b45eb12ab20bc472cdc42c17
 
 COCOAPODS: 1.8.4

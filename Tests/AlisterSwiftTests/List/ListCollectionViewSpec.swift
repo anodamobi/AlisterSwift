@@ -43,7 +43,7 @@ class ListCollectionViewSpec: QuickSpec {
                 listCollectionView.dataSource = dataSource
             }
             
-            context("table data is consistent", {
+            context("table data is consistent", closure: {
                 it("scroll view exists") {
                     expect(listCollectionView.scrollView).notTo(beNil())
                 }

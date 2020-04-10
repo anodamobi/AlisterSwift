@@ -43,7 +43,7 @@ class ListTableViewSpec: QuickSpec {
                 listTableView.dataSource = dataSource
             }
             
-            context("table data is consistent", {
+            context("table data is consistent", closure: {
                 it("scroll view exists") {
                     expect(listTableView.scrollView).notTo(beNil())
                     expect(listTableView.scrollView).to(beAKindOf(UIScrollView.self))

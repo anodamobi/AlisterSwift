@@ -90,7 +90,7 @@ class StorageUpdaterSpec: QuickSpec {
                 expect(delegate.update?.isEmpty()).to(beTrue())
             })
             
-            describe("addItems", {
+            describe("addItems", closure: {
                 
                 it("objects from array added in a correct order", closure: {
                     updater.add(itemsArray)
@@ -109,7 +109,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("adding objects in non-existing section creates required sections", {
+            describe("adding objects in non-existing section creates required sections", closure: {
                 
                 it("addItems", closure: {
                     updater.add(itemsArray)
@@ -165,7 +165,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("addItem: toSection:", {
+            describe("addItem: toSection:", closure: {
                 
                 it("added item equal to retrived", closure: {
                     updater.add(item, to: 2)
@@ -173,7 +173,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("addItems: toSection:", {
+            describe("addItems: toSection:", closure: {
                 
                 it("items added in a correct order", closure: {
                     updater.add(itemsArray, to: 2)
@@ -181,7 +181,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("addItem: atIndexPath:", {
+            describe("addItem: atIndexPath:", closure: {
                 
                 it("items added and loaded are the same", closure: {
                     updater.add(first)
@@ -195,7 +195,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("reload", {
+            describe("reload", closure: {
                 
                 it("empty update if item doesn't exist in storage", closure: {
                     updater.reload(item)
@@ -213,7 +213,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("move", {
+            describe("move", closure: {
                 
                 it("empty update if from index path not exist", closure: {
                     updater.add(itemsArray)
@@ -254,7 +254,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("move without update", {
+            describe("move without update", closure: {
                 
                 let newIndexPath = IndexPath(item: 0, section: 1)
                 
@@ -272,7 +272,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("replace", {
+            describe("replace", closure: {
                 
                 it("Successfully replaces item", closure: {
                     updater.add(item)
@@ -285,7 +285,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("update section header", {
+            describe("update section header", closure: {
                 
                 beforeEach {
                     storage.headerKind = "testKind"
@@ -316,7 +316,7 @@ class StorageUpdaterSpec: QuickSpec {
             })
             
             
-            describe("update section footer", {
+            describe("update section footer", closure: {
                 
                 beforeEach {
                     storage.footerKind = "testKind"
@@ -351,7 +351,7 @@ class StorageUpdaterSpec: QuickSpec {
                 })
             })
             
-            describe("remove supplementary", {
+            describe("remove supplementary", closure: {
                 //TODO:
             })
             
