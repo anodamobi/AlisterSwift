@@ -29,18 +29,19 @@ class TitleTableCell: UITableViewCell, ReusableViewInterface {
     
     private let title = UILabel()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
     }
     
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func configureUI() {
         contentView.addSubview(title)
-        title.snp.makeConstraints { (make) in
+        title.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }

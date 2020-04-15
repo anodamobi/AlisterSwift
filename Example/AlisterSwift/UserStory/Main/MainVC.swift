@@ -26,6 +26,7 @@ class MainVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,7 +35,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         configureUI()
         
-        controller.configureCells { (config) in
+        controller.configureCells { config in
             config.register(cell: TitleTableCell.self, for: TitleCellVM.self)
         }
 
@@ -51,7 +52,7 @@ class MainVC: UIViewController {
                         self.presentController(.carsColleciton)
                       })]
         
-        controller.storage.update { (update) in
+        controller.storage.update { update in
             update.add(models)
         }
     }
@@ -74,7 +75,7 @@ class MainVC: UIViewController {
     private func configureUI() {
         title = "Alister"
         view.addSubview(tableView)
-        tableView.snp.makeConstraints { (make) in
+        tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
