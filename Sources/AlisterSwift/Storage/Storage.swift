@@ -98,10 +98,11 @@ public class Storage: StoragePublicInterface, StorageUpdatableInterface {
     private func update(shouldAnimate: Bool = false, block: @escaping StorageUpdateClosure) {
         
         if type != .search {
-            let updateOp = StorageUpdateOperation { [unowned self] op in
-                self.updater.updateDelegate = op
-                self.remover.updateDelegate = op
-                block(self)
+            let updateOp = StorageUpdateOperation { [weak self] op in
+                guard let strongSelf = self else { return }
+                strongSelf.updater.updateDelegate = op
+                strongSelf.remover.updateDelegate = op
+                block(strongSelf)
             }
             updateOp.name = storageID
             updatesHandler?.storageDidPerformUpdate(updateOp,
